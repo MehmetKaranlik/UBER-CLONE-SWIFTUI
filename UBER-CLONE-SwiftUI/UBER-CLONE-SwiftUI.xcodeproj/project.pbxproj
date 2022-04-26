@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4660858028184FC100D32009 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660857F28184FC100D32009 /* NavigationUtil.swift */; };
+		466085822818511000D32009 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466085812818511000D32009 /* UITextField.swift */; };
+		4660858528187AC000D32009 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858428187AC000D32009 /* ColorConstants.swift */; };
+		4660858828187B1800D32009 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858728187B1800D32009 /* ImageConstants.swift */; };
+		4660858B2818820E00D32009 /* ImagedTextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */; };
+		4660858E281887ED00D32009 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858D281887ED00D32009 /* CapsuleButton.swift */; };
+		4660859228188A3400D32009 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660859128188A3400D32009 /* DynamicVerticalSpacer.swift */; };
+		46CCC2B0280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2AF280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift */; };
+		46CCC2B4280EC343001058A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CCC2B3280EC343001058A3 /* Assets.xcassets */; };
+		46CCC2B7280EC343001058A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CCC2B6280EC343001058A3 /* Preview Assets.xcassets */; };
+		46CCC2CC280EC495001058A3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2CB280EC495001058A3 /* LoginView.swift */; };
+		46CCC2CE280EC548001058A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2CD280EC548001058A3 /* LoginViewModel.swift */; };
+		46CCC2D2280EC89B001058A3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2D1280EC89B001058A3 /* CustomTextField.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4660857F28184FC100D32009 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
+		466085812818511000D32009 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		4660858428187AC000D32009 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		4660858728187B1800D32009 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
+		4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagedTextFieldRow.swift; sourceTree = "<group>"; };
+		4660858D281887ED00D32009 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
+		4660859128188A3400D32009 /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
+		46CCC2AC280EC342001058A3 /* UBER-CLONE-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UBER-CLONE-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46CCC2AF280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBER_CLONE_SwiftUIApp.swift; sourceTree = "<group>"; };
+		46CCC2B3280EC343001058A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46CCC2B6280EC343001058A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46CCC2CB280EC495001058A3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		46CCC2CD280EC548001058A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		46CCC2D1280EC89B001058A3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46CCC2A9280EC342001058A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4660857E28184FB400D32009 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4660859028188A2600D32009 /* SubViews */,
+				4660857F28184FC100D32009 /* NavigationUtil.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4660858328187AAA00D32009 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4660858628187AFE00D32009 /* Assets */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4660858628187AFE00D32009 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4660858428187AC000D32009 /* ColorConstants.swift */,
+				4660858728187B1800D32009 /* ImageConstants.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		46608589281881F700D32009 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		4660858C281887C400D32009 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4660858D281887ED00D32009 /* CapsuleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4660859028188A2600D32009 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				4660859128188A3400D32009 /* DynamicVerticalSpacer.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		46CCC2A3280EC342001058A3 = {
+			isa = PBXGroup;
+			children = (
+				46CCC2AE280EC342001058A3 /* UBER-CLONE-SwiftUI */,
+				46CCC2AD280EC342001058A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46CCC2AD280EC342001058A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2AC280EC342001058A3 /* UBER-CLONE-SwiftUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46CCC2AE280EC342001058A3 /* UBER-CLONE-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2BE280EC35A001058A3 /* Feature */,
+				46CCC2BD280EC353001058A3 /* Core */,
+				46CCC2AF280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift */,
+				46CCC2B3280EC343001058A3 /* Assets.xcassets */,
+				46CCC2B5280EC343001058A3 /* Preview Content */,
+			);
+			path = "UBER-CLONE-SwiftUI";
+			sourceTree = "<group>";
+		};
+		46CCC2B5280EC343001058A3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2B6280EC343001058A3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46CCC2BD280EC353001058A3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4660858328187AAA00D32009 /* Constants */,
+				4660857E28184FB400D32009 /* Helpers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		46CCC2BE280EC35A001058A3 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2C0280EC364001058A3 /* Product */,
+				46CCC2BF280EC360001058A3 /* View */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		46CCC2BF280EC360001058A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2C2280EC376001058A3 /* Register */,
+				46CCC2C1280EC370001058A3 /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46CCC2C0280EC364001058A3 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2CF280EC87E001058A3 /* SubViews */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		46CCC2C1280EC370001058A3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2C6280EC46D001058A3 /* Service */,
+				46CCC2C5280EC469001058A3 /* View */,
+				46CCC2C4280EC465001058A3 /* Model */,
+				46CCC2C3280EC455001058A3 /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		46CCC2C2280EC376001058A3 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2CA280EC488001058A3 /* View */,
+				46CCC2C9280EC47E001058A3 /* Service */,
+				46CCC2C8280EC479001058A3 /* Model */,
+				46CCC2C7280EC474001058A3 /* ViewModel */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		46CCC2C3280EC455001058A3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2CD280EC548001058A3 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46CCC2C4280EC465001058A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46CCC2C5280EC469001058A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2CB280EC495001058A3 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46CCC2C6280EC46D001058A3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		46CCC2C7280EC474001058A3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46CCC2C8280EC479001058A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46CCC2C9280EC47E001058A3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		46CCC2CA280EC488001058A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46CCC2CF280EC87E001058A3 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				4660858C281887C400D32009 /* Buttons */,
+				46608589281881F700D32009 /* Containers */,
+				46CCC2D0280EC888001058A3 /* TextFields */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		46CCC2D0280EC888001058A3 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				46CCC2D1280EC89B001058A3 /* CustomTextField.swift */,
+				466085812818511000D32009 /* UITextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46CCC2AB280EC342001058A3 /* UBER-CLONE-SwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46CCC2BA280EC343001058A3 /* Build configuration list for PBXNativeTarget "UBER-CLONE-SwiftUI" */;
+			buildPhases = (
+				46CCC2A8280EC342001058A3 /* Sources */,
+				46CCC2A9280EC342001058A3 /* Frameworks */,
+				46CCC2AA280EC342001058A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UBER-CLONE-SwiftUI";
+			productName = "UBER-CLONE-SwiftUI";
+			productReference = 46CCC2AC280EC342001058A3 /* UBER-CLONE-SwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46CCC2A4280EC342001058A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					46CCC2AB280EC342001058A3 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 46CCC2A7280EC342001058A3 /* Build configuration list for PBXProject "UBER-CLONE-SwiftUI" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46CCC2A3280EC342001058A3;
+			productRefGroup = 46CCC2AD280EC342001058A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46CCC2AB280EC342001058A3 /* UBER-CLONE-SwiftUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46CCC2AA280EC342001058A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46CCC2B7280EC343001058A3 /* Preview Assets.xcassets in Resources */,
+				46CCC2B4280EC343001058A3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46CCC2A8280EC342001058A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46CCC2D2280EC89B001058A3 /* CustomTextField.swift in Sources */,
+				46CCC2CC280EC495001058A3 /* LoginView.swift in Sources */,
+				4660859228188A3400D32009 /* DynamicVerticalSpacer.swift in Sources */,
+				4660858B2818820E00D32009 /* ImagedTextFieldRow.swift in Sources */,
+				4660858E281887ED00D32009 /* CapsuleButton.swift in Sources */,
+				4660858528187AC000D32009 /* ColorConstants.swift in Sources */,
+				4660858028184FC100D32009 /* NavigationUtil.swift in Sources */,
+				46CCC2B0280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift in Sources */,
+				46CCC2CE280EC548001058A3 /* LoginViewModel.swift in Sources */,
+				466085822818511000D32009 /* UITextField.swift in Sources */,
+				4660858828187B1800D32009 /* ImageConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		46CCC2B8280EC343001058A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		46CCC2B9280EC343001058A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46CCC2BB280EC343001058A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UBER-CLONE-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 348T9RAC33;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.meatlanosrep.UBER-CLONE-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46CCC2BC280EC343001058A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UBER-CLONE-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 348T9RAC33;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.meatlanosrep.UBER-CLONE-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46CCC2A7280EC342001058A3 /* Build configuration list for PBXProject "UBER-CLONE-SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46CCC2B8280EC343001058A3 /* Debug */,
+				46CCC2B9280EC343001058A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46CCC2BA280EC343001058A3 /* Build configuration list for PBXNativeTarget "UBER-CLONE-SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46CCC2BB280EC343001058A3 /* Debug */,
+				46CCC2BC280EC343001058A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46CCC2A4280EC342001058A3 /* Project object */;
+}
