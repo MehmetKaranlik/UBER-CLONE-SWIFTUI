@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46500B5B2822E44C0000AC60 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46500B5A2822E44C0000AC60 /* RegisterViewModel.swift */; };
+		46500B5E2822E5F70000AC60 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46500B5D2822E5F70000AC60 /* UISegmentedControl.swift */; };
 		4660858028184FC100D32009 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660857F28184FC100D32009 /* NavigationUtil.swift */; };
 		466085822818511000D32009 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466085812818511000D32009 /* UITextField.swift */; };
 		4660858528187AC000D32009 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858428187AC000D32009 /* ColorConstants.swift */; };
@@ -14,6 +16,13 @@
 		4660858B2818820E00D32009 /* ImagedTextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */; };
 		4660858E281887ED00D32009 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858D281887ED00D32009 /* CapsuleButton.swift */; };
 		4660859228188A3400D32009 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660859128188A3400D32009 /* DynamicVerticalSpacer.swift */; };
+		466A80DF2848FF4000CA457E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80DE2848FF4000CA457E /* HomeView.swift */; };
+		466A80E22849000100CA457E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E12849000100CA457E /* ViewExtensions.swift */; };
+		466A80E5284903F800CA457E /* MapPW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E4284903F800CA457E /* MapPW.swift */; };
+		466A80E82849129000CA457E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E72849129000CA457E /* LocationManager.swift */; };
+		46A6882F28495A34008B0DDF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6882E28495A34008B0DDF /* HomeViewModel.swift */; };
+		46BD42D2281897E70005FD15 /* TextButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD42D1281897E70005FD15 /* TextButtonStyle.swift */; };
+		46BD42D52818A5C50005FD15 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD42D42818A5C50005FD15 /* RegisterView.swift */; };
 		46CCC2B0280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2AF280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift */; };
 		46CCC2B4280EC343001058A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CCC2B3280EC343001058A3 /* Assets.xcassets */; };
 		46CCC2B7280EC343001058A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CCC2B6280EC343001058A3 /* Preview Assets.xcassets */; };
@@ -23,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46500B5A2822E44C0000AC60 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		46500B5D2822E5F70000AC60 /* UISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
 		4660857F28184FC100D32009 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		466085812818511000D32009 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4660858428187AC000D32009 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -30,6 +41,13 @@
 		4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagedTextFieldRow.swift; sourceTree = "<group>"; };
 		4660858D281887ED00D32009 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		4660859128188A3400D32009 /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
+		466A80DE2848FF4000CA457E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		466A80E12849000100CA457E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		466A80E4284903F800CA457E /* MapPW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPW.swift; sourceTree = "<group>"; };
+		466A80E72849129000CA457E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		46A6882E28495A34008B0DDF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		46BD42D1281897E70005FD15 /* TextButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonStyle.swift; sourceTree = "<group>"; };
+		46BD42D42818A5C50005FD15 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		46CCC2AC280EC342001058A3 /* UBER-CLONE-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UBER-CLONE-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46CCC2AF280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBER_CLONE_SwiftUIApp.swift; sourceTree = "<group>"; };
 		46CCC2B3280EC343001058A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46500B5C2822E56D0000AC60 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				46500B5D2822E5F70000AC60 /* UISegmentedControl.swift */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
 		4660857E28184FB400D32009 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +126,87 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		466A80D82848FF0F00CA457E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				466A80DC2848FF1F00CA457E /* ViewModel */,
+				466A80DB2848FF1D00CA457E /* Model */,
+				466A80DA2848FF1B00CA457E /* Service */,
+				466A80D92848FF1800CA457E /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		466A80D92848FF1800CA457E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				466A80DE2848FF4000CA457E /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		466A80DA2848FF1B00CA457E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		466A80DB2848FF1D00CA457E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		466A80DC2848FF1F00CA457E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				46A6882E28495A34008B0DDF /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		466A80E02848FFF300CA457E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				466A80E12849000100CA457E /* ViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		466A80E3284903E400CA457E /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				466A80E4284903F800CA457E /* MapPW.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		466A80E62849128600CA457E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				466A80E72849129000CA457E /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		46BD42CF281897C70005FD15 /* Modifers */ = {
+			isa = PBXGroup;
+			children = (
+				46BD42D0281897D10005FD15 /* CustomButtonModifers */,
+			);
+			path = Modifers;
+			sourceTree = "<group>";
+		};
+		46BD42D0281897D10005FD15 /* CustomButtonModifers */ = {
+			isa = PBXGroup;
+			children = (
+				46BD42D1281897E70005FD15 /* TextButtonStyle.swift */,
+			);
+			path = CustomButtonModifers;
+			sourceTree = "<group>";
+		};
 		46CCC2A3280EC342001058A3 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +246,8 @@
 		46CCC2BD280EC353001058A3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				466A80E62849128600CA457E /* Managers */,
+				466A80E02848FFF300CA457E /* Extensions */,
 				4660858328187AAA00D32009 /* Constants */,
 				4660857E28184FB400D32009 /* Helpers */,
 			);
@@ -157,6 +266,7 @@
 		46CCC2BF280EC360001058A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				466A80D82848FF0F00CA457E /* Home */,
 				46CCC2C2280EC376001058A3 /* Register */,
 				46CCC2C1280EC370001058A3 /* Login */,
 			);
@@ -166,6 +276,8 @@
 		46CCC2C0280EC364001058A3 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				466A80E3284903E400CA457E /* PropertyWrappers */,
+				46BD42CF281897C70005FD15 /* Modifers */,
 				46CCC2CF280EC87E001058A3 /* SubViews */,
 			);
 			path = Product;
@@ -226,6 +338,7 @@
 		46CCC2C7280EC474001058A3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				46500B5A2822E44C0000AC60 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -247,6 +360,7 @@
 		46CCC2CA280EC488001058A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46BD42D42818A5C50005FD15 /* RegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +368,7 @@
 		46CCC2CF280EC87E001058A3 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				46500B5C2822E56D0000AC60 /* Pickers */,
 				4660858C281887C400D32009 /* Buttons */,
 				46608589281881F700D32009 /* Containers */,
 				46CCC2D0280EC888001058A3 /* TextFields */,
@@ -341,15 +456,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				46CCC2D2280EC89B001058A3 /* CustomTextField.swift in Sources */,
+				466A80E5284903F800CA457E /* MapPW.swift in Sources */,
 				46CCC2CC280EC495001058A3 /* LoginView.swift in Sources */,
+				46A6882F28495A34008B0DDF /* HomeViewModel.swift in Sources */,
+				46BD42D52818A5C50005FD15 /* RegisterView.swift in Sources */,
 				4660859228188A3400D32009 /* DynamicVerticalSpacer.swift in Sources */,
 				4660858B2818820E00D32009 /* ImagedTextFieldRow.swift in Sources */,
 				4660858E281887ED00D32009 /* CapsuleButton.swift in Sources */,
 				4660858528187AC000D32009 /* ColorConstants.swift in Sources */,
 				4660858028184FC100D32009 /* NavigationUtil.swift in Sources */,
+				46500B5E2822E5F70000AC60 /* UISegmentedControl.swift in Sources */,
+				46500B5B2822E44C0000AC60 /* RegisterViewModel.swift in Sources */,
 				46CCC2B0280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift in Sources */,
 				46CCC2CE280EC548001058A3 /* LoginViewModel.swift in Sources */,
+				466A80E22849000100CA457E /* ViewExtensions.swift in Sources */,
 				466085822818511000D32009 /* UITextField.swift in Sources */,
+				466A80DF2848FF4000CA457E /* HomeView.swift in Sources */,
+				46BD42D2281897E70005FD15 /* TextButtonStyle.swift in Sources */,
+				466A80E82849129000CA457E /* LocationManager.swift in Sources */,
 				4660858828187B1800D32009 /* ImageConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +606,8 @@
 				DEVELOPMENT_TEAM = 348T9RAC33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = asdasda;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = asdasd;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,6 +637,8 @@
 				DEVELOPMENT_TEAM = 348T9RAC33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = asdasda;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = asdasd;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

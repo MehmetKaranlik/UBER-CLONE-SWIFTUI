@@ -12,17 +12,21 @@ import SwiftUI
 
 struct NavigationUtil {
 
+ static var connectedScenes: [UIWindowScene] {
+   get {
+    return  UIApplication.shared.connectedScenes.filter({ $0.activationState == .foregroundActive }).compactMap({$0 as? UIWindowScene})
+   }
+ }
+
  static func popToRootView() {
-  findNavigationController(viewController: UIApplication
-   .shared.windows
-   .filter { $0.isKeyWindow }.first?.rootViewController)?
+  lazy var vc = connectedScenes.first?.windows.filter { $0.isKeyWindow}.first?.rootViewController
+  findNavigationController(viewController: vc)?
    .popToRootViewController(animated: true)
  }
 
-
  static func replaceRootView<T:View>(_ view : T ) {
   let vc = UIHostingController(rootView: NavigationView(content: {  view }))
-  UIApplication.shared.windows.first?.rootViewController = vc
+  connectedScenes.first?.windows.first?.rootViewController = vc
  }
 
  static func findNavigationController(viewController: UIViewController?) -> UINavigationController? {

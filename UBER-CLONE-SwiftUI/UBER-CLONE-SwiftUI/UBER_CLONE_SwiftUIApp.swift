@@ -11,8 +11,7 @@ import SwiftUI
 struct UBER_CLONE_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-          LoginView()
-
+          HomeView()
         }
     }
 }

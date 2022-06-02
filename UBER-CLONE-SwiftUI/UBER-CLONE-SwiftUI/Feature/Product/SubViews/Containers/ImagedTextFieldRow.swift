@@ -37,8 +37,12 @@ struct ImagedTextFieldRow_Previews: PreviewProvider {
 extension Image {
  fileprivate func imageModifier() -> some View {
   self
+
    .resizable()
-   .frame(width: 36, height: 36, alignment: .center)
+   .renderingMode(.template)
+   .foregroundColor(.gray)
+   .frame(width: 28, height: 28, alignment: .center)
+
  }
 }
 

@@ -12,8 +12,9 @@ struct LoginView: View {
  @ObservedObject var vm : LoginViewModel = LoginViewModel()
 
   // MARK:  body
- var body: some View {
 
+
+ var body: some View {
 
   NavigationView {
    ZStack {
@@ -26,6 +27,8 @@ struct LoginView: View {
      DynamicVerticalSpacer(height: 30)
      buildLoginButton()
      Spacer()
+     buildDontHaveAccountButton()
+     DynamicVerticalSpacer(height: 20)
     }
    }
    .navigationBarHidden(true)
@@ -35,17 +38,37 @@ struct LoginView: View {
 
 
 
+ fileprivate func buildDontHaveAccountButton() -> some View {
+  return NavigationLink {
+   RegisterView()
+    .navigationBarBackButtonHidden(true)
+    .navigationBarHidden(true)
+  } label: {
+   HStack(spacing:5) {
+    Text("Dont have account ?")
+     .foregroundColor(.white)
+    Text("Click here to create.")
+     .foregroundColor(.accentColor)
+   }
+   .font(.footnote)
+  }
+  .buttonStyle(TextButtonStyle())
+ }
+
  fileprivate func buildLoginButton() -> CapsuleButton<Text> {
   return CapsuleButton(function: {
-   debugPrint("123")
-  }, width: 300, height: 30, backgroundColor: .accentColor) {
+   print("")
+   
+  }, width: 300, height: 35, backgroundColor: .accentColor) {
    Text("Login")
     .foregroundColor(.white)
+    .bold()
+    .tracking(1)
   }
  }
 
 
- fileprivate func buildEmailTextField() -> ImagedTextFieldRow<CustomUITextField> {
+ fileprivate func buildEmailTextField() -> some View{
   return ImagedTextFieldRow(imageName: ImageConstants.shared.accountIcon) {
    CustomUITextField(placeholderText: "E-mail", placeholderColor: .lightGray, fontColor: .lightGray, font: .preferredFont(forTextStyle: .body), autoCapitalization: UITextAutocapitalizationType.none, autoCorrectionType: .no, isObscured: false)
   }
@@ -69,7 +92,6 @@ struct LoginView_Previews: PreviewProvider {
   LoginView()
  }
 }
-
 
 
 

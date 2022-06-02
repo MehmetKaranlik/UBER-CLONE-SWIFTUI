@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct CapsuleButton<T:View>: View {
+
+
  let function : () -> Void
  let width : CGFloat
  let height: CGFloat
  let backgroundColor: Color
  @ViewBuilder let label: T
     var body: some View {
-     Button {
+     Button() {
       function()
      } label: {
       Capsule(style: .continuous)
        .capsuleModifier(width: width, height: height, backgroundColor: backgroundColor, content: label)
      }
+     .buttonStyle(CustomButtonStyle())
 
     }
+
+
 }
 
 struct CapsuleButton_Previews: PreviewProvider {
@@ -34,7 +39,8 @@ struct CapsuleButton_Previews: PreviewProvider {
      })
       .previewLayout(.sizeThatFits)
       .padding()
-      .background(.black)
+      .background(.white)
+
     }
 }
 
@@ -49,3 +55,19 @@ extension Capsule {
    }
  }
 }
+
+
+
+struct CustomButtonStyle : ButtonStyle {
+
+ func makeBody(configuration: Configuration) -> some View {
+  configuration.label
+   .scaleEffect(configuration.isPressed ? 0.95 : 1)
+   .shadow(color: .black.opacity(configuration.isPressed ? 0.8 : 0.5), radius: 20, x: configuration.isPressed ?  10 :12 , y: configuration.isPressed ? 10 : 12)
+   .opacity(configuration.isPressed ? 0.9 : 1)
+   .animation(.easeInOut(duration: 0.2), value: configuration.isPressed)
+ }
+
+
+}
+
