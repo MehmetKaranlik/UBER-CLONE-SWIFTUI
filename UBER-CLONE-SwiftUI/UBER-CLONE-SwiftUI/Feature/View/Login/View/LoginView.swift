@@ -57,7 +57,6 @@ struct LoginView: View {
 
  fileprivate func buildLoginButton() -> CapsuleButton<Text> {
   return CapsuleButton(function: {
-   print("")
    
   }, width: 300, height: 35, backgroundColor: .accentColor) {
    Text("Login")

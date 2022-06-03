@@ -21,6 +21,8 @@
 		466A80E5284903F800CA457E /* MapPW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E4284903F800CA457E /* MapPW.swift */; };
 		466A80E82849129000CA457E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E72849129000CA457E /* LocationManager.swift */; };
 		46A6882F28495A34008B0DDF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6882E28495A34008B0DDF /* HomeViewModel.swift */; };
+		46A6883228496624008B0DDF /* SearchBaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6883128496624008B0DDF /* SearchBaitView.swift */; };
+		46A6883A284A2298008B0DDF /* SearchOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A68839284A2298008B0DDF /* SearchOverlayView.swift */; };
 		46BD42D2281897E70005FD15 /* TextButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD42D1281897E70005FD15 /* TextButtonStyle.swift */; };
 		46BD42D52818A5C50005FD15 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD42D42818A5C50005FD15 /* RegisterView.swift */; };
 		46CCC2B0280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2AF280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift */; };
@@ -46,6 +48,8 @@
 		466A80E4284903F800CA457E /* MapPW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPW.swift; sourceTree = "<group>"; };
 		466A80E72849129000CA457E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		46A6882E28495A34008B0DDF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		46A6883128496624008B0DDF /* SearchBaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBaitView.swift; sourceTree = "<group>"; };
+		46A68839284A2298008B0DDF /* SearchOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOverlayView.swift; sourceTree = "<group>"; };
 		46BD42D1281897E70005FD15 /* TextButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonStyle.swift; sourceTree = "<group>"; };
 		46BD42D42818A5C50005FD15 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		46CCC2AC280EC342001058A3 /* UBER-CLONE-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UBER-CLONE-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */,
+				46A6883128496624008B0DDF /* SearchBaitView.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -191,6 +196,46 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		46A68833284A2269008B0DDF /* SearchOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				46A68837284A2284008B0DDF /* Model */,
+				46A68836284A227C008B0DDF /* Service */,
+				46A68835284A2279008B0DDF /* ViewModel */,
+				46A68834284A2277008B0DDF /* View */,
+			);
+			path = SearchOverlay;
+			sourceTree = "<group>";
+		};
+		46A68834284A2277008B0DDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46A68839284A2298008B0DDF /* SearchOverlayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46A68835284A2279008B0DDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46A68836284A227C008B0DDF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		46A68837284A2284008B0DDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		46BD42CF281897C70005FD15 /* Modifers */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +311,7 @@
 		46CCC2BF280EC360001058A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46A68833284A2269008B0DDF /* SearchOverlay */,
 				466A80D82848FF0F00CA457E /* Home */,
 				46CCC2C2280EC376001058A3 /* Register */,
 				46CCC2C1280EC370001058A3 /* Login */,
@@ -468,8 +514,10 @@
 				46500B5E2822E5F70000AC60 /* UISegmentedControl.swift in Sources */,
 				46500B5B2822E44C0000AC60 /* RegisterViewModel.swift in Sources */,
 				46CCC2B0280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift in Sources */,
+				46A6883A284A2298008B0DDF /* SearchOverlayView.swift in Sources */,
 				46CCC2CE280EC548001058A3 /* LoginViewModel.swift in Sources */,
 				466A80E22849000100CA457E /* ViewExtensions.swift in Sources */,
+				46A6883228496624008B0DDF /* SearchBaitView.swift in Sources */,
 				466085822818511000D32009 /* UITextField.swift in Sources */,
 				466A80DF2848FF4000CA457E /* HomeView.swift in Sources */,
 				46BD42D2281897E70005FD15 /* TextButtonStyle.swift in Sources */,

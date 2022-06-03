@@ -32,7 +32,6 @@ struct CapsuleButton<T:View>: View {
 struct CapsuleButton_Previews: PreviewProvider {
     static var previews: some View {
      CapsuleButton(function: {
-      print("123")
      }, width: 250, height: 30, backgroundColor: .accentColor,label: {
       Text("Placeholder")
        .foregroundColor(.white)

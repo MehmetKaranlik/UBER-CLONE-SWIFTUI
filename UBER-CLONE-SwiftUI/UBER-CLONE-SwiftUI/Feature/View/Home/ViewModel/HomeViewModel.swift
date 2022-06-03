@@ -7,25 +7,16 @@
 
 import Foundation
 import MapKit
-
+import SwiftUI
+import MapKit
 
 class HomeViewModel : ObservableObject {
-
-   var locationManager = LocationManager()
-
+   @Published var searchInput : String = ""
+   @Published var region = MKCoordinateRegion()
+   @Published var mapAnnotations : [MKAnnotation] = []
 
    init() {
-      updateRegion()
+      
    }
 
-
-
-
-   private func updateRegion() {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-         self.locationManager.$region.sink(receiveValue: { region in
-            print(region)
-         })
-      }
-}
 }

@@ -5,27 +5,22 @@
 //  Created by mehmet karanlık on 2.06.2022.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 import MapKit
 
-class LocationManager :NSObject, CLLocationManagerDelegate, ObservableObject {
-
-   var manager : CLLocationManager?
-   var permissionStatus : CLAuthorizationStatus?
-   @Published var region : MKCoordinateRegion =  MKCoordinateRegion()
-   var location : CLLocation? {
+class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
+   var manager: CLLocationManager?
+   var permissionStatus: CLAuthorizationStatus?
+   @Published var location = CLLocation() {
       didSet {
-         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.region = MKCoordinateRegion(center: self.location!.coordinate, span: .init(latitudeDelta: 0.05, longitudeDelta: 0.05))
-         }
+         updateLocation()
       }
    }
 
+   @Published var region = MKCoordinateRegion()
 
-
-
-   override  init() {
+   override init() {
       super.init()
       checkIfLocationServicesEnabled {
          manager?.delegate = self
@@ -33,49 +28,46 @@ class LocationManager :NSObject, CLLocationManagerDelegate, ObservableObject {
          manager!.requestWhenInUseAuthorization()
          manager!.requestLocation()
       }
-
    }
 
+   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      guard let lastKnownLocation = locations.last else { return }
+      location = lastKnownLocation
+   }
 
-  nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])  {
-     
-  }
-
-   nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
       print(error)
    }
 
-
-   internal func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)   {
+   internal func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
       switch manager.authorizationStatus {
          case .denied:
             print("denied")
-
          case .restricted:
             print("restricted")
          case .notDetermined:
             manager.requestWhenInUseAuthorization()
          case .authorizedWhenInUse:
-              updateLocation(manager.location!)
+            updateCoordinate(manager.location!)
          default: break
-
       }
    }
 
-
-  private func checkIfLocationServicesEnabled(onEnabled : () -> Void) {
+   private func checkIfLocationServicesEnabled(onEnabled: () -> Void) {
       if CLLocationManager.locationServicesEnabled() {
          manager = CLLocationManager()
          onEnabled()
       }
    }
 
-     private func updateLocation(_ location : CLLocation)   {
-      Task {
-         self.location =  location
+   private func updateLocation() {
+      DispatchQueue.main.async {
+         self.region = MKCoordinateRegion(center: self.location.coordinate,
+                                          span: .init(latitudeDelta: 0.01, longitudeDelta: 0.01))
       }
    }
 
+   private func updateCoordinate(_ location: CLLocation) {
+      self.location = location
+   }
 }
-
-
