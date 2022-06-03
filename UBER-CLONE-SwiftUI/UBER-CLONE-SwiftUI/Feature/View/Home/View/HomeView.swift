@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
    @StateObject var viewModel = HomeViewModel()
-   @StateObject var locationManager = LocationManager()
+   @StateObject var locationManager = LocationManager.shared
    @State var searchBarOpacity : Double = 1
    @State var isOverlayAnimating : Bool = false
    var body: some View {
@@ -23,7 +23,9 @@ struct HomeView: View {
          })
          .opacity(searchBarOpacity)
          .position(x: UIScreen.main.bounds.maxX / 2, y:60)
-         SearchOverlayView(isAnimating: $isOverlayAnimating) { bool in
+         SearchOverlayView(isAnimating: $isOverlayAnimating,
+                           searchText: $viewModel.searchInput,
+                           searchItems: $viewModel.searchResults) { bool in
             isOverlayAnimating = bool
          }
       }

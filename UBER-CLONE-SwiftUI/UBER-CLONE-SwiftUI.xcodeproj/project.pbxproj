@@ -20,6 +20,8 @@
 		466A80E22849000100CA457E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E12849000100CA457E /* ViewExtensions.swift */; };
 		466A80E5284903F800CA457E /* MapPW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E4284903F800CA457E /* MapPW.swift */; };
 		466A80E82849129000CA457E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E72849129000CA457E /* LocationManager.swift */; };
+		4694B3A9284A8BDD009517F4 /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694B3A8284A8BDD009517F4 /* HomeServiceProtocol.swift */; };
+		4694B3AB284A8E35009517F4 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694B3AA284A8E35009517F4 /* HomeService.swift */; };
 		46A6882F28495A34008B0DDF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6882E28495A34008B0DDF /* HomeViewModel.swift */; };
 		46A6883228496624008B0DDF /* SearchBaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6883128496624008B0DDF /* SearchBaitView.swift */; };
 		46A6883A284A2298008B0DDF /* SearchOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A68839284A2298008B0DDF /* SearchOverlayView.swift */; };
@@ -47,6 +49,8 @@
 		466A80E12849000100CA457E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		466A80E4284903F800CA457E /* MapPW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPW.swift; sourceTree = "<group>"; };
 		466A80E72849129000CA457E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4694B3A8284A8BDD009517F4 /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
+		4694B3AA284A8E35009517F4 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		46A6882E28495A34008B0DDF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		46A6883128496624008B0DDF /* SearchBaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBaitView.swift; sourceTree = "<group>"; };
 		46A68839284A2298008B0DDF /* SearchOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOverlayView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		466A80DA2848FF1B00CA457E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4694B3A8284A8BDD009517F4 /* HomeServiceProtocol.swift */,
+				4694B3AA284A8E35009517F4 /* HomeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				46A6882F28495A34008B0DDF /* HomeViewModel.swift in Sources */,
 				46BD42D52818A5C50005FD15 /* RegisterView.swift in Sources */,
 				4660859228188A3400D32009 /* DynamicVerticalSpacer.swift in Sources */,
+				4694B3AB284A8E35009517F4 /* HomeService.swift in Sources */,
 				4660858B2818820E00D32009 /* ImagedTextFieldRow.swift in Sources */,
 				4660858E281887ED00D32009 /* CapsuleButton.swift in Sources */,
 				4660858528187AC000D32009 /* ColorConstants.swift in Sources */,
@@ -523,6 +530,7 @@
 				46BD42D2281897E70005FD15 /* TextButtonStyle.swift in Sources */,
 				466A80E82849129000CA457E /* LocationManager.swift in Sources */,
 				4660858828187B1800D32009 /* ImageConstants.swift in Sources */,
+				4694B3A9284A8BDD009517F4 /* HomeServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

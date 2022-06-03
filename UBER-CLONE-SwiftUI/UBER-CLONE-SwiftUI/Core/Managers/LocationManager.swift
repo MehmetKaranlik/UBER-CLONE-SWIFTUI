@@ -12,6 +12,9 @@ import MapKit
 class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
    var manager: CLLocationManager?
    var permissionStatus: CLAuthorizationStatus?
+
+   static let shared = LocationManager()
+
    @Published var location = CLLocation() {
       didSet {
          updateLocation()

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct SearchOverlayView: View {
    // MARK: properties
@@ -16,6 +17,8 @@ struct SearchOverlayView: View {
    // animation values
    @State var upperSidePosition = -(UIScreen.main.bounds.height / 5)
    @State var bottomSidePosition = ((4*UIScreen.main.bounds.height) / 3)
+   @Binding var searchText : String
+   @Binding var searchItems : [MKPlacemark]
    let onClose : (Bool) -> ()
 
    var body: some View {
@@ -97,7 +100,7 @@ struct SearchOverlayView: View {
          DynamicVerticalSpacer(height: 10)
 
          CustomTextField(isObscured: false, placeHolderText: "Search Location",
-                         leftInset: 5, verticalInset: 0, valueHolder: .constant(""),
+                         leftInset: 5, verticalInset: 0, valueHolder: $searchText,
                          width: 250, height: 10, font: .callout,
                          backgroundColor: Color(uiColor: .systemGroupedBackground),
                          foregroundColor: .black, cornerRadius: 3,
@@ -110,22 +113,35 @@ struct SearchOverlayView: View {
 
    fileprivate func buildBottomContainer() -> some View {
       return HStack {
-         Group {
-            List {
-               Section {
-                  ForEach(0 ..< 20) { _ in
-                     Text("Hello")
+         List {
+            Section {
+               ForEach($searchItems, id: \.self) { $item  in
+                  VStack(alignment: .leading) {
+                     Text(item.name ?? "")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                     Text(item.title ?? "")
+                        .font(.footnote)
+                        .foregroundColor(.black)
+                        .truncationMode(.tail)
+                        .lineLimit(1)
                   }
-               } header: {
-                  Text("Locations")
-                     .foregroundColor(Color(uiColor: .darkGray))
-                     .font(.subheadline)
-                     .fontWeight(.bold)
                }
+            } header: {
+               Text("Locations")
+                  .font(.title2)
+                  .fontWeight(.bold)
+                  .foregroundColor(Color(uiColor: .darkGray))
+                  .padding(.vertical,10)
             }
-            .listStyle(.grouped)
          }
-      }
+         .listRowInsets(.none)
+         .listStyle(.plain)
+
+
+   }
+
 
       .frame(width: width, height: 4*height / 5, alignment: .center)
       .border(Color(uiColor: .lightGray), width: 0.5)
@@ -139,7 +155,7 @@ struct SearchOverlayView: View {
 
 struct SearchOverlayView_Previews: PreviewProvider {
    static var previews: some View {
-      SearchOverlayView(isAnimating: .constant(true)) { bool in
+      SearchOverlayView(isAnimating: .constant(true),searchText: .constant("hi"),searchItems: .constant([])) { bool in
          
       }
    }
