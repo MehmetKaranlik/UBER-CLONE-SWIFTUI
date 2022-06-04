@@ -13,15 +13,22 @@ import Combine
 
 class HomeViewModel : ObservableObject {
    // MARK:  properties
+   var cancellables = Set<AnyCancellable>()
    let service = HomeService()
-
-
    weak var locationManger = LocationManager.shared
+
+
+   //published properties
    @Published var searchInput : String = ""
    @Published var region = MKCoordinateRegion()
-   @Published var mapAnnotations : [MKAnnotation] = []
+   @Published var mapAnnotations : [MKAnnotation]?
    @Published var searchResults : [MKPlacemark] = []
-   var cancellables = Set<AnyCancellable>()
+   @Published var selectedRoute : MKPolyline? {
+      didSet {
+         print("DEBUG : Polyline set edildi")
+      }
+   }
+   @Published var selectedAnnotation : MKAnnotation?
 
    init() {
       addListenerToSearchBar()
@@ -43,6 +50,17 @@ class HomeViewModel : ObservableObject {
          }
       }
       .store(in: &cancellables)
-
    }
+
+
+   func generatePolyline(placeMark : MKPlacemark) {
+    let destination = MKMapItem(placemark: placeMark)
+      service.generatePolylineByIndex(destination) { polyline in
+         print("DEBUG : \(polyline)")
+         self.selectedRoute = polyline
+      }
+   }
+   
+
+
 }

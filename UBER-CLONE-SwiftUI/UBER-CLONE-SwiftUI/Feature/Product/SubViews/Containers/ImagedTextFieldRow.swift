@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ImagedTextFieldRow<T: View>: View {
  let imageName : String
- @ViewBuilder  let uiTextField: T
+ @ViewBuilder  var uiTextField: T
 
  var body: some View {
   HStack {
    Image(imageName)
     .imageModifier()
-
-   uiTextField
+     uiTextField
    .frame(width: 250, height: 30, alignment: .center)
   }
   .hstackModifier()
@@ -26,7 +25,16 @@ struct ImagedTextFieldRow<T: View>: View {
 struct ImagedTextFieldRow_Previews: PreviewProvider {
  static var previews: some View {
   ImagedTextFieldRow(imageName: ImageConstants.shared.personOutlineIcon, uiTextField: {
-   CustomUITextField(placeholderText: "", placeholderColor: .red, fontColor: .red, font: .preferredFont(forTextStyle: .body), autoCapitalization: UITextAutocapitalizationType.none, autoCorrectionType: .no, isObscured: false)
+   CustomUITextField(
+      valueholder : .constant("example"),
+      placeholderText: "",
+      placeholderColor: .red,
+      fontColor: .red,
+      font: .preferredFont(forTextStyle: .body),
+      autoCapitalization: UITextAutocapitalizationType.none,
+      autoCorrectionType: .no,
+      isObscured: false
+   )
   })
    .previewLayout(.sizeThatFits)
    .padding()

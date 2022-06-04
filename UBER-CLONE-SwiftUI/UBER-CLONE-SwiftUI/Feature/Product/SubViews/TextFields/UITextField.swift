@@ -10,6 +10,9 @@ import SwiftUI
 import UIKit
 
 struct CustomUITextField: UIViewRepresentable {
+
+   @Binding var valueholder : String
+
    let placeholderText: String
    let placeholderColor: UIColor
    let fontColor: UIColor
@@ -36,5 +39,25 @@ struct CustomUITextField: UIViewRepresentable {
       return textField
    }
 
-   func updateUIView(_ uiView: UITextField, context: Context) {}
+   func updateUIView(_ uiView: UITextField, context: Context) {
+      valueholder = context.coordinator.valueholder
+   }
+
+   func makeCoordinator() -> Coordinator {
+      return Coordinator($valueholder)
+   }
+
+   class Coordinator : NSObject, UITextFieldDelegate {
+      @Binding var valueholder : String
+
+      init(_ text : Binding<String>) {
+         self._valueholder = text
+      }
+
+
+      func textFieldDidChangeSelection(_ textField: UITextField) {
+         valueholder = textField.text ?? ""
+      }
+   }
+   
 }

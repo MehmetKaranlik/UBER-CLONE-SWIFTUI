@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 protocol HomeServiceProtocol {
    typealias Completion =  ([MKPlacemark]) -> ()
-
+   typealias PolylineCompletion = (MKPolyline) -> ()
    func  fetchSearchPlaces(languageQuery : String,region : MKCoordinateRegion, completion : @escaping Completion)
-
+   func  generatePolylineByIndex(_ toDestination : MKMapItem, completion : @escaping PolylineCompletion)
 }

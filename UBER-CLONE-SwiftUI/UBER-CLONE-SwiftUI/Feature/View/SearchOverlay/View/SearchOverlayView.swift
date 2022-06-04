@@ -20,6 +20,7 @@ struct SearchOverlayView: View {
    @Binding var searchText : String
    @Binding var searchItems : [MKPlacemark]
    let onClose : (Bool) -> ()
+   let onSelect : (Binding<MKPlacemark>) -> ()
 
    var body: some View {
       VStack(spacing: 0) {
@@ -116,16 +117,14 @@ struct SearchOverlayView: View {
          List {
             Section {
                ForEach($searchItems, id: \.self) { $item  in
-                  VStack(alignment: .leading) {
-                     Text(item.name ?? "")
-                        .font(.body)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black)
-                     Text(item.title ?? "")
-                        .font(.footnote)
-                        .foregroundColor(.black)
-                        .truncationMode(.tail)
-                        .lineLimit(1)
+                  ListRow(
+                     name: item.name ?? "",
+                     title: item.title ?? ""
+                  )
+                  .onTapGesture {
+                     onSelect($item)
+                     isAnimating.toggle()
+                     onClose(isAnimating)
                   }
                }
             } header: {
@@ -157,6 +156,8 @@ struct SearchOverlayView_Previews: PreviewProvider {
    static var previews: some View {
       SearchOverlayView(isAnimating: .constant(true),searchText: .constant("hi"),searchItems: .constant([])) { bool in
          
+      } onSelect: { item in
+
       }
    }
 }
@@ -167,5 +168,23 @@ private extension Image {
          .scaledToFit()
          .frame(width: 15)
          .foregroundColor(.black)
+   }
+}
+
+struct ListRow: View {
+   let name : String
+   let title : String
+   var body: some View {
+      VStack(alignment: .leading) {
+         Text(name)
+            .font(.body)
+            .fontWeight(.semibold)
+            .foregroundColor(.black)
+         Text(title)
+            .font(.footnote)
+            .foregroundColor(.black)
+            .truncationMode(.tail)
+            .lineLimit(1)
+      }
    }
 }

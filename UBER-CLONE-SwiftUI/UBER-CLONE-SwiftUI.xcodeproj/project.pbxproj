@@ -22,6 +22,7 @@
 		466A80E82849129000CA457E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A80E72849129000CA457E /* LocationManager.swift */; };
 		4694B3A9284A8BDD009517F4 /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694B3A8284A8BDD009517F4 /* HomeServiceProtocol.swift */; };
 		4694B3AB284A8E35009517F4 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694B3AA284A8E35009517F4 /* HomeService.swift */; };
+		4694B3AE284B67E9009517F4 /* UIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694B3AD284B67E9009517F4 /* UIMapView.swift */; };
 		46A6882F28495A34008B0DDF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6882E28495A34008B0DDF /* HomeViewModel.swift */; };
 		46A6883228496624008B0DDF /* SearchBaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6883128496624008B0DDF /* SearchBaitView.swift */; };
 		46A6883A284A2298008B0DDF /* SearchOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A68839284A2298008B0DDF /* SearchOverlayView.swift */; };
@@ -51,6 +52,7 @@
 		466A80E72849129000CA457E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4694B3A8284A8BDD009517F4 /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
 		4694B3AA284A8E35009517F4 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		4694B3AD284B67E9009517F4 /* UIMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapView.swift; sourceTree = "<group>"; };
 		46A6882E28495A34008B0DDF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		46A6883128496624008B0DDF /* SearchBaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBaitView.swift; sourceTree = "<group>"; };
 		46A68839284A2298008B0DDF /* SearchOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOverlayView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 				466A80E72849129000CA457E /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		4694B3AC284B67DD009517F4 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4694B3AD284B67E9009517F4 /* UIMapView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		46A68833284A2269008B0DDF /* SearchOverlay */ = {
@@ -420,6 +430,7 @@
 		46CCC2CF280EC87E001058A3 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				4694B3AC284B67DD009517F4 /* Custom */,
 				46500B5C2822E56D0000AC60 /* Pickers */,
 				4660858C281887C400D32009 /* Buttons */,
 				46608589281881F700D32009 /* Containers */,
@@ -520,6 +531,7 @@
 				4660858028184FC100D32009 /* NavigationUtil.swift in Sources */,
 				46500B5E2822E5F70000AC60 /* UISegmentedControl.swift in Sources */,
 				46500B5B2822E44C0000AC60 /* RegisterViewModel.swift in Sources */,
+				4694B3AE284B67E9009517F4 /* UIMapView.swift in Sources */,
 				46CCC2B0280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift in Sources */,
 				46A6883A284A2298008B0DDF /* SearchOverlayView.swift in Sources */,
 				46CCC2CE280EC548001058A3 /* LoginViewModel.swift in Sources */,

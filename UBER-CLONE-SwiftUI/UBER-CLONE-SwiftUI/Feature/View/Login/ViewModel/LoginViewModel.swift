@@ -10,6 +10,7 @@ import Foundation
 
 class LoginViewModel : ObservableObject {
 
- @Published var userNameText  = ""
+   @Published var userNameText  : String = ""
+   @Published var password : String = ""
  
 }

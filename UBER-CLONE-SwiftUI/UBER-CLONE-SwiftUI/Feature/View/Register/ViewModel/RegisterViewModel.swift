@@ -7,7 +7,11 @@
 
 import Foundation
 
-class RegisterViewModel : ObservableObject {
+class RegisterViewModel: ObservableObject {
 
- @Published var isDriver : Int = 0
+   @Published var isDriver: Int = 0
+   @Published var emailValue: String = ""
+   @Published var passwordValue: String = ""
+
+
 }
