@@ -11,6 +11,7 @@ struct RegisterView: View {
    @StateObject var viewModel = RegisterViewModel()
    @State var emailValue: String = ""
    @State var passwordValue: String = ""
+   let user : User = User(username: "hello", password: "hello", usertype: UserType.driver.rawValue)
    var body: some View {
       ZStack {
          Color.black.ignoresSafeArea()
@@ -20,7 +21,15 @@ struct RegisterView: View {
             DynamicVerticalSpacer(height: 20)
             buildSegmentedController()
             DynamicVerticalSpacer(height: 20)
-            CapsuleButton(function: {}, width: 300, height: 35, backgroundColor: .blue) {
+            CapsuleButton(
+               function: {
+                  Mirror(reflecting: user).children.forEach { child in
+                     print(child.label)
+                  }
+               }, width: 300,
+                          height: 35,
+                          backgroundColor: .blue
+            ) {
                Text("Register")
                   .foregroundColor(.white)
                   .bold()
