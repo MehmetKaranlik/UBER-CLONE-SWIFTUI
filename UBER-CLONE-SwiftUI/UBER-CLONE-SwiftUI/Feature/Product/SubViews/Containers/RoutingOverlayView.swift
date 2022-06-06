@@ -52,7 +52,8 @@ struct RoutingOverlayView: View {
 
        }
        .frame(width: width, height: height / 3, alignment: .top)
-       .background(.white)
+       .background(.ultraThinMaterial)
+       .opacity(0.95)
        .cornerRadius(15, antialiased: true)
     }
 }

@@ -37,6 +37,14 @@ struct UIMapView : UIViewRepresentable {
            uiView.removeOverlays(uiView.overlays)
            uiView.addOverlay(polyLine)
       }
+
+      if polyLine == nil && !uiView.overlays.isEmpty {
+         uiView.removeOverlays(uiView.overlays)
+         uiView.setCamera(MKMapCamera(lookingAtCenter: uiView.userLocation.coordinate,
+                                      fromDistance: 2000, pitch: 0, heading: 0), animated: true)
+         uiView.removeAnnotations(uiView.selectedAnnotations)
+
+      }
       annotations != nil ? uiView.addAnnotations(annotations!) : nil
       updateSelectedAnnotations(uiView: uiView)
    }
@@ -64,10 +72,9 @@ struct UIMapView : UIViewRepresentable {
          return MKOverlayRenderer()
       }
 
-//      func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-//         mapView.removeOverlays(mapView.overlays)
-//         mapView.removeAnnotations(mapView.annotations)
-//      }
+      func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+         mapView.removeAnnotation(view.annotation!)
+      }
    }
 
 
@@ -82,9 +89,6 @@ struct UIMapView : UIViewRepresentable {
          uiView.selectAnnotation(selectedAnnotation, animated: true)
          uiView.showAnnotations([selectedAnnotation, uiView.userLocation], animated: true)
       }
-
-         //updateSelectedAnnotations(uiView: uiView)
-
    }
 
    private func updateCameraOnDeselect(uiView: MKMapView) {

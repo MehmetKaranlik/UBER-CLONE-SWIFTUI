@@ -42,12 +42,15 @@ struct HomeView: View {
          )
          .onChange(of: isOverlayAnimating, perform: changeOpacity)
 
+         // cancelatipn overlay
          if viewModel.selectedAnnotation != nil && !viewModel.searchResults.isEmpty && !isOverlayAnimating {
             if let index = viewModel.selectedIndex {
                let destionation = viewModel.searchResults[index]
                buildCancelationOverlay(destionation)
             }
          }
+
+
       }
    }
 
@@ -93,5 +96,10 @@ extension HomeView {
       viewModel.generatePolyline(placeMark: item.wrappedValue)
    }
 
-   private func onCancelHandler() {}
+   private func onCancelHandler() {
+      viewModel.selectedIndex = 0
+      viewModel.selectedAnnotation = nil
+      viewModel.selectedRoute = nil
+      
+   }
 }
