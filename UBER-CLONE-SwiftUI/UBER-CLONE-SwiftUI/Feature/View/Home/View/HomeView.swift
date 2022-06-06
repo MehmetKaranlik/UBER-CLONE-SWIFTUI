@@ -47,6 +47,8 @@ struct HomeView: View {
             if let index = viewModel.selectedIndex {
                let destionation = viewModel.searchResults[index]
                buildCancelationOverlay(destionation)
+
+
             }
          }
 
@@ -97,9 +99,6 @@ extension HomeView {
    }
 
    private func onCancelHandler() {
-      viewModel.selectedIndex = 0
-      viewModel.selectedAnnotation = nil
-      viewModel.selectedRoute = nil
-      
+      viewModel.cancelRouting()
    }
 }

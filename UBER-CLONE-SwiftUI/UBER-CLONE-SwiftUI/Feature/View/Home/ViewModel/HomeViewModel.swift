@@ -62,5 +62,10 @@ class HomeViewModel : ObservableObject {
    }
    
 
+   func cancelRouting() {
+      selectedIndex = 0
+      selectedAnnotation = nil
+      selectedRoute = nil
+   }
 
 }

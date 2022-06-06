@@ -13,7 +13,7 @@ struct RoutingOverlayView: View {
    let destinationAdress : String
    let width = UIScreen.main.bounds.width
    let height = UIScreen.main.bounds.height
-
+   @State var offSet : CGFloat = UIScreen.main.bounds.height / 3
    let onCancel : () -> ()
 
     var body: some View {
@@ -55,6 +55,12 @@ struct RoutingOverlayView: View {
        .background(.ultraThinMaterial)
        .opacity(0.95)
        .cornerRadius(15, antialiased: true)
+       .offset(x: 0, y: offSet )
+       .onAppear {
+          withAnimation(.easeInOut(duration: 0.5)) {
+             offSet = 0
+          }
+       }
     }
 }
 
