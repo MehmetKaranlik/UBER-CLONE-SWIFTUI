@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
-
+import Firebase
 @main
 struct UBER_CLONE_SwiftUIApp: App {
+   init() {
+      FirebaseApp.configure()
+   }
     var body: some Scene {
         WindowGroup {
-           LoginView()
+           HomeView()
         }
     }
 }

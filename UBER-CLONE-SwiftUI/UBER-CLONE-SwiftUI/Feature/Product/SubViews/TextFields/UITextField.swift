@@ -31,6 +31,7 @@ struct CustomUITextField: UIViewRepresentable {
       textField.autocapitalizationType = autoCapitalization!
       textField.autocorrectionType = autoCorrectionType!
       textField.isSecureTextEntry = isObscured!
+      textField.delegate = context.coordinator
 
       textField.attributedPlaceholder = NSAttributedString(
          string: placeholderText,
@@ -40,7 +41,7 @@ struct CustomUITextField: UIViewRepresentable {
    }
 
    func updateUIView(_ uiView: UITextField, context: Context) {
-      valueholder = context.coordinator.valueholder
+
    }
 
    func makeCoordinator() -> Coordinator {
@@ -55,7 +56,7 @@ struct CustomUITextField: UIViewRepresentable {
       }
 
 
-      func textFieldDidChangeSelection(_ textField: UITextField) {
+   func textFieldDidChangeSelection(_ textField: UITextField) {
          valueholder = textField.text ?? ""
       }
    }

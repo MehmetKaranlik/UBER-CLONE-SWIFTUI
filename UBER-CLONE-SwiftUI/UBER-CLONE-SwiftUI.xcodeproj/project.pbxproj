@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464380B9284D0AAA0067AA4C /* RegisterServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */; };
+		464380BB284D0F2F0067AA4C /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380BA284D0F2F0067AA4C /* RegisterService.swift */; };
+		464380BE284D14350067AA4C /* DB+References.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380BD284D14350067AA4C /* DB+References.swift */; };
+		464380C0284D364F0067AA4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 464380BF284D364F0067AA4C /* GoogleService-Info.plist */; };
+		464380C2284D3AEA0067AA4C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380C1284D3AEA0067AA4C /* LoadingView.swift */; };
+		464380C4284D3B7B0067AA4C /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380C3284D3B7B0067AA4C /* UIActivityIndicatorView.swift */; };
+		464380C6284DFE7C0067AA4C /* RoutingOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380C5284DFE7C0067AA4C /* RoutingOverlayView.swift */; };
 		46500B5B2822E44C0000AC60 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46500B5A2822E44C0000AC60 /* RegisterViewModel.swift */; };
 		46500B5E2822E5F70000AC60 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46500B5D2822E5F70000AC60 /* UISegmentedControl.swift */; };
 		4660858028184FC100D32009 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660857F28184FC100D32009 /* NavigationUtil.swift */; };
@@ -42,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceProtocol.swift; sourceTree = "<group>"; };
+		464380BA284D0F2F0067AA4C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		464380BD284D14350067AA4C /* DB+References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DB+References.swift"; sourceTree = "<group>"; };
+		464380BF284D364F0067AA4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		464380C1284D3AEA0067AA4C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		464380C3284D3B7B0067AA4C /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
+		464380C5284DFE7C0067AA4C /* RoutingOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingOverlayView.swift; sourceTree = "<group>"; };
 		46500B5A2822E44C0000AC60 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		46500B5D2822E5F70000AC60 /* UISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
 		4660857F28184FC100D32009 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
@@ -88,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		464380BC284D14270067AA4C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				464380BD284D14350067AA4C /* DB+References.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		46500B5C2822E56D0000AC60 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +130,7 @@
 		4660858328187AAA00D32009 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				464380BC284D14270067AA4C /* Utilities */,
 				4660858628187AFE00D32009 /* Assets */,
 			);
 			path = Constants;
@@ -127,6 +150,8 @@
 			children = (
 				4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */,
 				46A6883128496624008B0DDF /* SearchBaitView.swift */,
+				464380C1284D3AEA0067AA4C /* LoadingView.swift */,
+				464380C5284DFE7C0067AA4C /* RoutingOverlayView.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -219,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				4694B3AD284B67E9009517F4 /* UIMapView.swift */,
+				464380C3284D3B7B0067AA4C /* UIActivityIndicatorView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -301,6 +327,7 @@
 				46CCC2BE280EC35A001058A3 /* Feature */,
 				46CCC2BD280EC353001058A3 /* Core */,
 				46CCC2AF280EC342001058A3 /* UBER_CLONE_SwiftUIApp.swift */,
+				464380BF284D364F0067AA4C /* GoogleService-Info.plist */,
 				46CCC2B3280EC343001058A3 /* Assets.xcassets */,
 				46CCC2B5280EC343001058A3 /* Preview Content */,
 			);
@@ -427,6 +454,8 @@
 		46CCC2C9280EC47E001058A3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */,
+				464380BA284D0F2F0067AA4C /* RegisterService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -528,6 +557,7 @@
 			files = (
 				46CCC2B7280EC343001058A3 /* Preview Assets.xcassets in Resources */,
 				46CCC2B4280EC343001058A3 /* Assets.xcassets in Resources */,
+				464380C0284D364F0067AA4C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464380BB284D0F2F0067AA4C /* RegisterService.swift in Sources */,
 				4664AEF1284CAE7000BB8459 /* User.swift in Sources */,
 				46CCC2D2280EC89B001058A3 /* CustomTextField.swift in Sources */,
 				46CCC2CC280EC495001058A3 /* LoginView.swift in Sources */,
@@ -558,13 +589,18 @@
 				46A6883A284A2298008B0DDF /* SearchOverlayView.swift in Sources */,
 				46CCC2CE280EC548001058A3 /* LoginViewModel.swift in Sources */,
 				466A80E22849000100CA457E /* ViewExtensions.swift in Sources */,
+				464380B9284D0AAA0067AA4C /* RegisterServiceProtocol.swift in Sources */,
 				46A6883228496624008B0DDF /* SearchBaitView.swift in Sources */,
 				466085822818511000D32009 /* UITextField.swift in Sources */,
 				466A80DF2848FF4000CA457E /* HomeView.swift in Sources */,
 				46BD42D2281897E70005FD15 /* TextButtonStyle.swift in Sources */,
 				466A80E82849129000CA457E /* LocationManager.swift in Sources */,
+				464380C4284D3B7B0067AA4C /* UIActivityIndicatorView.swift in Sources */,
 				4660858828187B1800D32009 /* ImageConstants.swift in Sources */,
+				464380C6284DFE7C0067AA4C /* RoutingOverlayView.swift in Sources */,
 				4694B3A9284A8BDD009517F4 /* HomeServiceProtocol.swift in Sources */,
+				464380C2284D3AEA0067AA4C /* LoadingView.swift in Sources */,
+				464380BE284D14350067AA4C /* DB+References.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

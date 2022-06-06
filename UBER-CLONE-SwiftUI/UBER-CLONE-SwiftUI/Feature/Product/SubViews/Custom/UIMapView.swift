@@ -30,8 +30,11 @@ struct UIMapView : UIViewRepresentable {
    func updateUIView(_ uiView: MKMapView, context: Context) {
       //print("DEBUG : \(polyLine)")
       context.coordinator.polyLine = $polyLine.wrappedValue
-      print("")
+      print("DEBUG :" + selectedAnnotation.debugDescription)
+
+
       if let polyLine = polyLine {
+           uiView.removeOverlays(uiView.overlays)
            uiView.addOverlay(polyLine)
       }
       annotations != nil ? uiView.addAnnotations(annotations!) : nil
@@ -53,7 +56,6 @@ struct UIMapView : UIViewRepresentable {
       func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         // print("DEBUG : Coordinator polyLine \(polyLine)")
          if let polyLine = polyLine {
-
             let lineRenderer = MKPolylineRenderer(polyline:polyLine)
             lineRenderer.strokeColor = .black
             lineRenderer.lineWidth = 3
@@ -61,13 +63,21 @@ struct UIMapView : UIViewRepresentable {
          }
          return MKOverlayRenderer()
       }
+
+//      func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+//         mapView.removeOverlays(mapView.overlays)
+//         mapView.removeAnnotations(mapView.annotations)
+//      }
    }
+
+
 
    private func updateSelectedAnnotations(uiView : MKMapView) {
          // print("DEBUG : Selected annotation : \(polyLine == nil)")
      // print("DEBUG : Mapview polyline \(polyLine)")
       if let selectedAnnotation = selectedAnnotation {
        //  print("DEBUG : BURAYA GİRDİ")
+         uiView.removeAnnotations(uiView.selectedAnnotations)
          uiView.addAnnotation(selectedAnnotation)
          uiView.selectAnnotation(selectedAnnotation, animated: true)
          uiView.showAnnotations([selectedAnnotation, uiView.userLocation], animated: true)

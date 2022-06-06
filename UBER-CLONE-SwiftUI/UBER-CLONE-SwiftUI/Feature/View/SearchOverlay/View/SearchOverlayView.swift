@@ -19,6 +19,7 @@ struct SearchOverlayView: View {
    @State var bottomSidePosition = ((4*UIScreen.main.bounds.height) / 3)
    @Binding var searchText : String
    @Binding var searchItems : [MKPlacemark]
+   @Binding var selectedIndex : Int
    let onClose : (Bool) -> ()
    let onSelect : (Binding<MKPlacemark>) -> ()
 
@@ -125,6 +126,7 @@ struct SearchOverlayView: View {
                      onSelect($item)
                      isAnimating.toggle()
                      onClose(isAnimating)
+                     selectedIndex = searchItems.firstIndex(of: item) ?? 0
                   }
                }
             } header: {
@@ -154,7 +156,7 @@ struct SearchOverlayView: View {
 
 struct SearchOverlayView_Previews: PreviewProvider {
    static var previews: some View {
-      SearchOverlayView(isAnimating: .constant(true),searchText: .constant("hi"),searchItems: .constant([])) { bool in
+      SearchOverlayView(isAnimating: .constant(true),searchText: .constant("hi"),searchItems: .constant([]),selectedIndex: .constant(0)) { bool in
          
       } onSelect: { item in
 

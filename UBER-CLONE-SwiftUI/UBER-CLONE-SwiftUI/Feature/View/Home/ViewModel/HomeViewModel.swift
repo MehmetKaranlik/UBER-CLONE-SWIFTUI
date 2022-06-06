@@ -22,12 +22,9 @@ class HomeViewModel : ObservableObject {
    @Published var searchInput : String = ""
    @Published var region = MKCoordinateRegion()
    @Published var mapAnnotations : [MKAnnotation]?
+   @Published var selectedIndex : Int = 0
    @Published var searchResults : [MKPlacemark] = []
-   @Published var selectedRoute : MKPolyline? {
-      didSet {
-         print("DEBUG : Polyline set edildi")
-      }
-   }
+   @Published var selectedRoute : MKPolyline?
    @Published var selectedAnnotation : MKAnnotation?
 
    init() {
@@ -55,6 +52,9 @@ class HomeViewModel : ObservableObject {
 
    func generatePolyline(placeMark : MKPlacemark) {
     let destination = MKMapItem(placemark: placeMark)
+    let destinationAnnotation = MKPointAnnotation()
+       destinationAnnotation.coordinate = placeMark.coordinate
+      selectedAnnotation = destinationAnnotation
       service.generatePolylineByIndex(destination) { polyline in
          print("DEBUG : \(polyline)")
          self.selectedRoute = polyline

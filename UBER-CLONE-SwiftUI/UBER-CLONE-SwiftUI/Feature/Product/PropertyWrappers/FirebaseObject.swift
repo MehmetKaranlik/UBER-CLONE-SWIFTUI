@@ -8,25 +8,20 @@
 import Foundation
 import SwiftUI
 
-
 @propertyWrapper
 struct FirebaseObject<Content: FirebaseObjectMapping> : DynamicProperty {
-   var value : Content
+   @State private var value: Content?
 
-
-   var wrappedValue : Content {
+   var wrappedValue: Content? {
       get {
-         value
+         return value
       }
-      mutating set {
-         guard let newValue = newValue as? [String : Any?] else { return }
-         value.setUpValues(dictionary: newValue)
+    nonmutating set {
+         value = newValue
       }
    }
 }
 
-
-protocol FirebaseObjectMapping  {
-
-   func setUpValues(dictionary : [String: Any?])
+protocol FirebaseObjectMapping {
+   mutating func setUpValues(dictionary: [String: Any?])
 }

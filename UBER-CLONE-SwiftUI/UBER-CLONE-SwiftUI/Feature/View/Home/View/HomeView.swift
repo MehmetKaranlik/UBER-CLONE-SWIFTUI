@@ -13,9 +13,10 @@ struct HomeView: View {
    @StateObject var locationManager = LocationManager.shared
    @State var searchBarOpacity: Double = 1
    @State var isOverlayAnimating: Bool = false
+
    var body: some View {
       ZStack {
-         //map
+         // map
          UIMapView(
             region: $locationManager.region,
             polyLine: $viewModel.selectedRoute,
@@ -23,23 +24,44 @@ struct HomeView: View {
             selectedAnnotation: $viewModel.selectedAnnotation
          )
          .ignoresSafeArea()
-         //search bar
+         // search bar
          SearchBaitView(onTap: {
             isOverlayAnimating.toggle()
          })
          .opacity(searchBarOpacity)
          .position(x: UIScreen.main.bounds.maxX / 2, y: 60)
          // toggleView
-         SearchOverlayView(isAnimating: $isOverlayAnimating,
-                           searchText: $viewModel.searchInput,
-                           searchItems: $viewModel.searchResults) { bool in
-            isOverlayAnimating = bool
-         } onSelect: { item in
-            viewModel.generatePolyline(placeMark: item.wrappedValue)
-            
+         SearchOverlayView(
+            isAnimating: $isOverlayAnimating,
+            searchText: $viewModel.searchInput,
+            searchItems: $viewModel.searchResults,
+            selectedIndex: $viewModel.selectedIndex,
+            onClose: { bool in
+               isOverlayAnimating = bool
+            }, onSelect: onSelectHandler
+         )
+         .onChange(of: isOverlayAnimating, perform: changeOpacity)
+
+         if viewModel.selectedAnnotation != nil && !viewModel.searchResults.isEmpty && !isOverlayAnimating {
+            if let index = viewModel.selectedIndex {
+               let destionation = viewModel.searchResults[index]
+               buildCancelationOverlay(destionation)
+            }
          }
       }
-      .onChange(of: isOverlayAnimating, perform: changeOpacity)
+   }
+
+   fileprivate func buildCancelationOverlay(_ destionation: MKPlacemark) -> some View {
+      return VStack {
+         Spacer()
+         RoutingOverlayView(
+            destinationName: destionation.name ?? "",
+            destinationAdress:
+            (destionation.subLocality ?? "") + (destionation.subThoroughfare ?? ""),
+
+            onCancel: onCancelHandler
+         )
+      }
    }
 }
 
@@ -66,4 +88,10 @@ extension HomeView {
          }
       }
    }
+
+   private func onSelectHandler(item: Binding<MKPlacemark>) {
+      viewModel.generatePolyline(placeMark: item.wrappedValue)
+   }
+
+   private func onCancelHandler() {}
 }

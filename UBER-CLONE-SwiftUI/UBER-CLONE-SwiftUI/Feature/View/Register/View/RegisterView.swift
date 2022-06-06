@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct RegisterView: View {
+   // MARK: properties
+
    @StateObject var viewModel = RegisterViewModel()
    @State var emailValue: String = ""
    @State var passwordValue: String = ""
-   let user : User = User(username: "hello", password: "hello", usertype: UserType.driver.rawValue)
+
+   // MARK: body
+
    var body: some View {
       ZStack {
          Color.black.ignoresSafeArea()
@@ -21,28 +25,36 @@ struct RegisterView: View {
             DynamicVerticalSpacer(height: 20)
             buildSegmentedController()
             DynamicVerticalSpacer(height: 20)
-            CapsuleButton(
-               function: {
-                  Mirror(reflecting: user).children.forEach { child in
-                     print(child.label)
-                  }
-               }, width: 300,
-                          height: 35,
-                          backgroundColor: .blue
-            ) {
-               Text("Register")
-                  .foregroundColor(.white)
-                  .bold()
-                  .tracking(1)
-            }
+            buildRegisterButton()
             Spacer()
             buildHaveAccountButton()
             DynamicVerticalSpacer(height: 20)
+            NavigationLink(isActive: $viewModel.isNavigating) {
+               HomeView()
+                  .navigationBarHidden(true)
+            } label: {
+
+            }
+
          }
+         .disabled(viewModel.isLoading)
+         if viewModel.isLoading { LoadingView(isAnimating: viewModel.isLoading) }
       }
    }
+}
 
-   fileprivate func buildHaveAccountButton() -> some View {
+// MARK: preview
+
+struct RegisterView_Previews: PreviewProvider {
+   static var previews: some View {
+      RegisterView()
+   }
+}
+
+// MARK: extracted views
+
+private extension RegisterView {
+   func buildHaveAccountButton() -> some View {
       return Button {
          NavigationUtil.popToRootView()
       } label: {
@@ -57,7 +69,7 @@ struct RegisterView: View {
       .buttonStyle(TextButtonStyle())
    }
 
-   fileprivate func buildTextFields() -> some View {
+   func buildTextFields() -> some View {
       return Group {
          ImagedTextFieldRow(imageName: ImageConstants.shared.accountIcon) {
             CustomUITextField(
@@ -74,7 +86,7 @@ struct RegisterView: View {
          DynamicVerticalSpacer(height: 20)
          ImagedTextFieldRow(imageName: ImageConstants.shared.lockIcon) {
             CustomUITextField(
-               valueholder : $passwordValue,
+               valueholder: $passwordValue,
                placeholderText: "Password",
                placeholderColor: .lightGray,
                fontColor: .lightGray,
@@ -87,7 +99,7 @@ struct RegisterView: View {
       }
    }
 
-   fileprivate func buildSegmentedController() -> some View {
+   func buildSegmentedController() -> some View {
       return VStack(alignment: .leading) {
          Text("User role")
             .foregroundColor(Color(uiColor: .lightGray))
@@ -103,15 +115,25 @@ struct RegisterView: View {
       .padding(.horizontal, 40)
    }
 
-   fileprivate func buildHeader() -> Text {
+   func buildHeader() -> Text {
       return Text("Register")
          .foregroundColor(Color(uiColor: .lightGray))
          .font(.largeTitle)
    }
-}
 
-struct RegisterView_Previews: PreviewProvider {
-   static var previews: some View {
-      RegisterView()
+   func buildRegisterButton() -> CapsuleButton<Text> {
+      return CapsuleButton(
+         function: {
+            viewModel.registerUser(email: emailValue,
+                                   password: passwordValue)
+         }, width: 300,
+         height: 35,
+         backgroundColor: .blue
+      ) {
+         Text("Register")
+            .foregroundColor(.white)
+            .bold()
+            .tracking(1)
+      }
    }
 }
