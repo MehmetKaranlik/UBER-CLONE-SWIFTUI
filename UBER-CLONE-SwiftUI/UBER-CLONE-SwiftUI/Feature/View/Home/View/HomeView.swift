@@ -47,25 +47,12 @@ struct HomeView: View {
             if let index = viewModel.selectedIndex {
                let destionation = viewModel.searchResults[index]
                buildCancelationOverlay(destionation)
-
-
             }
          }
-
-
       }
    }
 
-   fileprivate func buildCancelationOverlay(_ destionation: MKPlacemark) -> some View {
-      return VStack {
-         Spacer()
-         RoutingOverlayView(
-            destinationName: destionation.name ?? "",
-            destinationAdress: destionation.buildAdress(),
-            onCancel: onCancelHandler
-         )
-      }
-   }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -98,5 +85,20 @@ extension HomeView {
 
    private func onCancelHandler() {
       viewModel.cancelRouting()
+   }
+}
+
+// MARK:  subviews
+extension HomeView {
+
+   fileprivate func buildCancelationOverlay(_ destionation: MKPlacemark) -> some View {
+      return VStack {
+         Spacer()
+         RoutingOverlayView(
+            destinationName: destionation.name ?? "",
+            destinationAdress: destionation.buildAdress(),
+            onCancel: onCancelHandler
+         )
+      }
    }
 }

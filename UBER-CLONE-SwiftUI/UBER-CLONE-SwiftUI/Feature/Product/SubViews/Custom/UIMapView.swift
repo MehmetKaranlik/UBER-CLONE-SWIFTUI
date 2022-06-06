@@ -6,46 +6,29 @@
 //
 
 import Foundation
-import SwiftUI
 import MapKit
+import SwiftUI
 
-struct UIMapView : UIViewRepresentable {
-
-
-   @Binding var region : MKCoordinateRegion
-   @Binding var polyLine : MKPolyline?
-   @Binding var annotations : [MKAnnotation]?
-   @Binding var selectedAnnotation : MKAnnotation?
+struct UIMapView: UIViewRepresentable {
+   // MARK:  properties
+   @Binding var region: MKCoordinateRegion
+   @Binding var polyLine: MKPolyline?
+   @Binding var annotations: [MKAnnotation]?
+   @Binding var selectedAnnotation: MKAnnotation?
 
    func makeUIView(context: Context) -> MKMapView {
       let mapview = MKMapView()
-      mapview.region = self.region
-      mapview.userTrackingMode = .follow
-      mapview.centerCoordinate = region.center
-      
-      mapview.delegate = context.coordinator
+      configureUIView(mapview, context)
       return mapview
    }
 
    func updateUIView(_ uiView: MKMapView, context: Context) {
-      //print("DEBUG : \(polyLine)")
       context.coordinator.polyLine = $polyLine.wrappedValue
-      print("DEBUG :" + selectedAnnotation.debugDescription)
-
-
-      if let polyLine = polyLine {
-           uiView.removeOverlays(uiView.overlays)
-           uiView.addOverlay(polyLine)
-      }
-
-      if polyLine == nil && !uiView.overlays.isEmpty {
-         uiView.removeOverlays(uiView.overlays)
-         uiView.setCamera(MKMapCamera(lookingAtCenter: uiView.userLocation.coordinate,
-                                      fromDistance: 2000, pitch: 0, heading: 0), animated: true)
-         uiView.removeAnnotations(uiView.selectedAnnotations)
-
-      }
+      // update polyline
+      updatePolyLine(uiView)
+      // add driver annotations
       annotations != nil ? uiView.addAnnotations(annotations!) : nil
+      // update destination annotation
       updateSelectedAnnotations(uiView: uiView)
    }
 
@@ -53,21 +36,18 @@ struct UIMapView : UIViewRepresentable {
       return Coordinator(polyLine)
    }
 
-   class Coordinator : NSObject , MKMapViewDelegate {
-       var polyLine : MKPolyline?
+   // MARK:  coordinator
+   class Coordinator: NSObject, MKMapViewDelegate {
+      var polyLine: MKPolyline?
 
-
-      init(_ incomingPolyline : MKPolyline?) {
+      init(_ incomingPolyline: MKPolyline?) {
          polyLine = incomingPolyline
       }
 
       func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        // print("DEBUG : Coordinator polyLine \(polyLine)")
+         // build polyLineRenderer
          if let polyLine = polyLine {
-            let lineRenderer = MKPolylineRenderer(polyline:polyLine)
-            lineRenderer.strokeColor = .black
-            lineRenderer.lineWidth = 3
-            return lineRenderer
+            return buildLineRenderer(polyLine)
          }
          return MKOverlayRenderer()
       }
@@ -75,15 +55,46 @@ struct UIMapView : UIViewRepresentable {
       func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
          mapView.removeAnnotation(view.annotation!)
       }
+
+      // helpers
+      fileprivate func buildLineRenderer(_ polyLine: MKPolyline) -> MKOverlayRenderer {
+         let lineRenderer = MKPolylineRenderer(polyline: polyLine)
+         lineRenderer.strokeColor = .black
+         lineRenderer.lineWidth = 3
+         return lineRenderer
+      }
+   }
+}
+
+
+// MARK:  functions
+extension UIMapView {
+   // insert || remove polyline based on binding
+   fileprivate func updatePolyLine(_ uiView: MKMapView) {
+      if let polyLine = polyLine {
+         uiView.removeOverlays(uiView.overlays)
+         uiView.addOverlay(polyLine)
+      }
+
+      if polyLine == nil, !uiView.overlays.isEmpty {
+         uiView.removeOverlays(uiView.overlays)
+         updateCameraOnDeselect(uiView: uiView)
+         uiView.removeAnnotations(uiView.selectedAnnotations)
+      }
    }
 
+   // configure mapView options
+   fileprivate func configureUIView(_ mapview: MKMapView, _ context: UIMapView.Context) {
+      mapview.region = region
+      mapview.userTrackingMode = .follow
+      mapview.centerCoordinate = region.center
+      mapview.delegate = context.coordinator
+   }
 
-
-   private func updateSelectedAnnotations(uiView : MKMapView) {
-         // print("DEBUG : Selected annotation : \(polyLine == nil)")
-     // print("DEBUG : Mapview polyline \(polyLine)")
+   // update annotations on route select
+   private func updateSelectedAnnotations(uiView: MKMapView) {
       if let selectedAnnotation = selectedAnnotation {
-       //  print("DEBUG : BURAYA GİRDİ")
+         //  print("DEBUG : BURAYA GİRDİ")
          uiView.removeAnnotations(uiView.selectedAnnotations)
          uiView.addAnnotation(selectedAnnotation)
          uiView.selectAnnotation(selectedAnnotation, animated: true)
@@ -91,8 +102,9 @@ struct UIMapView : UIViewRepresentable {
       }
    }
 
+   // deselect function on selected annotation
    private func updateCameraOnDeselect(uiView: MKMapView) {
-      uiView.setCamera(MKMapCamera(lookingAtCenter: region.center,
-                                   fromDistance: 20, pitch: 0, heading: 0), animated: true)
+      uiView.setCamera(MKMapCamera(lookingAtCenter: uiView.userLocation.coordinate,
+                                   fromDistance: 2000, pitch: 0, heading: 0), animated: true)
    }
 }
