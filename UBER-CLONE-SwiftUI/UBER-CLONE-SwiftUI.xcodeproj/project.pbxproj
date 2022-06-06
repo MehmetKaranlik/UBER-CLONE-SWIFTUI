@@ -16,6 +16,7 @@
 		464380C6284DFE7C0067AA4C /* RoutingOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380C5284DFE7C0067AA4C /* RoutingOverlayView.swift */; };
 		46500B5B2822E44C0000AC60 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46500B5A2822E44C0000AC60 /* RegisterViewModel.swift */; };
 		46500B5E2822E5F70000AC60 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46500B5D2822E5F70000AC60 /* UISegmentedControl.swift */; };
+		465CDFE9284E948D003185F8 /* Placemark+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465CDFE8284E948D003185F8 /* Placemark+Extensions.swift */; };
 		4660858028184FC100D32009 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660857F28184FC100D32009 /* NavigationUtil.swift */; };
 		466085822818511000D32009 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466085812818511000D32009 /* UITextField.swift */; };
 		4660858528187AC000D32009 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858428187AC000D32009 /* ColorConstants.swift */; };
@@ -58,6 +59,7 @@
 		464380C5284DFE7C0067AA4C /* RoutingOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingOverlayView.swift; sourceTree = "<group>"; };
 		46500B5A2822E44C0000AC60 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		46500B5D2822E5F70000AC60 /* UISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
+		465CDFE8284E948D003185F8 /* Placemark+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Placemark+Extensions.swift"; sourceTree = "<group>"; };
 		4660857F28184FC100D32009 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		466085812818511000D32009 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4660858428187AC000D32009 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				466A80E12849000100CA457E /* ViewExtensions.swift */,
+				465CDFE8284E948D003185F8 /* Placemark+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				46CCC2CC280EC495001058A3 /* LoginView.swift in Sources */,
 				46A6882F28495A34008B0DDF /* HomeViewModel.swift in Sources */,
 				46BD42D52818A5C50005FD15 /* RegisterView.swift in Sources */,
+				465CDFE9284E948D003185F8 /* Placemark+Extensions.swift in Sources */,
 				4660859228188A3400D32009 /* DynamicVerticalSpacer.swift in Sources */,
 				4694B3AB284A8E35009517F4 /* HomeService.swift in Sources */,
 				4660858B2818820E00D32009 /* ImagedTextFieldRow.swift in Sources */,

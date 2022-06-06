@@ -61,9 +61,7 @@ struct HomeView: View {
          Spacer()
          RoutingOverlayView(
             destinationName: destionation.name ?? "",
-            destinationAdress:
-            (destionation.subLocality ?? "") + (destionation.subThoroughfare ?? ""),
-
+            destinationAdress: destionation.buildAdress(),
             onCancel: onCancelHandler
          )
       }
