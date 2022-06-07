@@ -31,6 +31,18 @@ struct LoginView: View {
                Spacer()
                buildDontHaveAccountButton()
                DynamicVerticalSpacer(height: 20)
+               NavigationLink(isActive: $viewModel.isLeavingScene) {
+                  HomeView()
+                     .navigationBarHidden(true)
+               } label: {
+                  
+               }
+
+            }
+            .disabled(viewModel.isLoading)
+
+            if viewModel.isLoading {
+               LoadingView(isAnimating: viewModel.isLoading)
             }
          }
          .navigationBarHidden(true)
@@ -58,7 +70,7 @@ struct LoginView: View {
    fileprivate func buildLoginButton() -> some View {
       return CapsuleButton(
          function: {
-
+            viewModel.login(email: userName, password: password)
       }, width: 300, height: 35, backgroundColor: .accentColor) {
          Text("Login")
             .foregroundColor(.white)

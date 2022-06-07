@@ -13,6 +13,7 @@ struct RegisterView: View {
    @StateObject var viewModel = RegisterViewModel()
    @State var emailValue: String = ""
    @State var passwordValue: String = ""
+   @State var userType : Int = 0
 
    // MARK: body
 
@@ -37,7 +38,6 @@ struct RegisterView: View {
             }
 
          }
-         .disabled(viewModel.isLoading)
          if viewModel.isLoading { LoadingView(isAnimating: viewModel.isLoading) }
       }
    }
@@ -109,7 +109,8 @@ private extension RegisterView {
             Text("Rider")
          } _: {
             Text("Driver")
-         } onChanged: { _ in
+         } onChanged: { index in
+            viewModel.isDriver = index
          }
       }
       .padding(.horizontal, 40)

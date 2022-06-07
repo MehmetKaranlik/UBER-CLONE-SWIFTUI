@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import GeoFire
 import MapKit
 
+struct HomeService: HomeServiceProtocol {
+   // MARK:  properties
+   var geofire: GeoFire = GeoFire(firebaseRef: DRIVER_LOCATIONS_REF)
 
-struct HomeService : HomeServiceProtocol {
+   var localSearchRequest: MKLocalSearch.Request = MKLocalSearch.Request()
 
+   var directionRequest: MKDirections.Request = MKDirections.Request()
 
-
-
-
-   func fetchSearchPlaces(languageQuery : String,region : MKCoordinateRegion, completion : @escaping Completion) {
+   func fetchSearchPlaces(languageQuery: String, region: MKCoordinateRegion, completion: @escaping Completion) {
       var results = [MKPlacemark]()
       let request = MKLocalSearch.Request()
       request.region = region
@@ -28,13 +30,13 @@ struct HomeService : HomeServiceProtocol {
          }
          guard let response = response else { return }
          response.mapItems.forEach { item in
-            results.append( item.placemark)
+            results.append(item.placemark)
          }
          completion(results)
       }
    }
 
-   func generatePolylineByIndex(_ toDestination : MKMapItem, completion : @escaping PolylineCompletion) {
+   func generatePolylineByIndex(_ toDestination: MKMapItem, completion: @escaping PolylineCompletion) {
       let request = MKDirections.Request()
       request.source = MKMapItem.forCurrentLocation()
       request.destination = toDestination
@@ -50,6 +52,9 @@ struct HomeService : HomeServiceProtocol {
          let polyLine = route.polyline
          completion(polyLine)
       }
+   }
 
+   func fetchDrivers(location: CLLocation, onResult: @escaping DriverFetchingCompletion) {
+      
    }
 }

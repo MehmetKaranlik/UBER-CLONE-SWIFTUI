@@ -10,3 +10,4 @@ import FirebaseDatabase
 
 let DB_REF = Database.database()
 let USER_DB_REF = DB_REF.reference(withPath: "USERS")
+let DRIVER_LOCATIONS_REF = DB_REF.reference(withPath: "DRIVER_LOCATIONS")

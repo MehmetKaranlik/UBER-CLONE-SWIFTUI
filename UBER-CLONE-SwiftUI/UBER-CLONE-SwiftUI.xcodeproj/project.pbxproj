@@ -24,9 +24,6 @@
 		4660858B2818820E00D32009 /* ImagedTextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858A2818820E00D32009 /* ImagedTextFieldRow.swift */; };
 		4660858E281887ED00D32009 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660858D281887ED00D32009 /* CapsuleButton.swift */; };
 		4660859228188A3400D32009 /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660859128188A3400D32009 /* DynamicVerticalSpacer.swift */; };
-		4664AEEB284CAAB600BB8459 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4664AEEA284CAAB600BB8459 /* FirebaseAuth */; };
-		4664AEED284CAAB600BB8459 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4664AEEC284CAAB600BB8459 /* FirebaseDatabase */; };
-		4664AEEF284CAAB600BB8459 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4664AEEE284CAAB600BB8459 /* FirebaseFirestore */; };
 		4664AEF1284CAE7000BB8459 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4664AEF0284CAE7000BB8459 /* User.swift */; };
 		4664AEF3284CB6BD00BB8459 /* JsonObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4664AEF2284CB6BD00BB8459 /* JsonObjectWrapper.swift */; };
 		4664AEF5284CC28C00BB8459 /* FirebaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4664AEF4284CC28C00BB8459 /* FirebaseObject.swift */; };
@@ -47,9 +44,14 @@
 		46CCC2CC280EC495001058A3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2CB280EC495001058A3 /* LoginView.swift */; };
 		46CCC2CE280EC548001058A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2CD280EC548001058A3 /* LoginViewModel.swift */; };
 		46CCC2D2280EC89B001058A3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCC2D1280EC89B001058A3 /* CustomTextField.swift */; };
+		46DC1502284F4E1800C87DE8 /* LoginServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC1501284F4E1800C87DE8 /* LoginServiceProtocol.swift */; };
+		46DC1504284F4E7600C87DE8 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC1503284F4E7600C87DE8 /* LoginService.swift */; };
+		AE62B326E26F9BAEC6B073FB /* Pods_UBER_CLONE_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8C0F9A51F1F4A3775F34E8 /* Pods_UBER_CLONE_SwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		034D6BF980D9B14E3A5ABBB0 /* Pods-UBER-CLONE-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER-CLONE-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-UBER-CLONE-SwiftUI/Pods-UBER-CLONE-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		2C8C0F9A51F1F4A3775F34E8 /* Pods_UBER_CLONE_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBER_CLONE_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceProtocol.swift; sourceTree = "<group>"; };
 		464380BA284D0F2F0067AA4C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		464380BD284D14350067AA4C /* DB+References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DB+References.swift"; sourceTree = "<group>"; };
@@ -88,6 +90,9 @@
 		46CCC2CB280EC495001058A3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		46CCC2CD280EC548001058A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		46CCC2D1280EC89B001058A3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		46DC1501284F4E1800C87DE8 /* LoginServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceProtocol.swift; sourceTree = "<group>"; };
+		46DC1503284F4E7600C87DE8 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		ABB5C77B6A3D45189C4BA5A5 /* Pods-UBER-CLONE-SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER-CLONE-SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-UBER-CLONE-SwiftUI/Pods-UBER-CLONE-SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,15 +100,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4664AEED284CAAB600BB8459 /* FirebaseDatabase in Frameworks */,
-				4664AEEB284CAAB600BB8459 /* FirebaseAuth in Frameworks */,
-				4664AEEF284CAAB600BB8459 /* FirebaseFirestore in Frameworks */,
+				AE62B326E26F9BAEC6B073FB /* Pods_UBER_CLONE_SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B665D8207009445FEB0937A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				034D6BF980D9B14E3A5ABBB0 /* Pods-UBER-CLONE-SwiftUI.debug.xcconfig */,
+				ABB5C77B6A3D45189C4BA5A5 /* Pods-UBER-CLONE-SwiftUI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		464380BC284D14270067AA4C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +325,8 @@
 			children = (
 				46CCC2AE280EC342001058A3 /* UBER-CLONE-SwiftUI */,
 				46CCC2AD280EC342001058A3 /* Products */,
+				2B665D8207009445FEB0937A /* Pods */,
+				FDCAEF123631F45E5115B44E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -434,6 +448,8 @@
 		46CCC2C6280EC46D001058A3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				46DC1501284F4E1800C87DE8 /* LoginServiceProtocol.swift */,
+				46DC1503284F4E7600C87DE8 /* LoginService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -492,6 +508,14 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		FDCAEF123631F45E5115B44E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C8C0F9A51F1F4A3775F34E8 /* Pods_UBER_CLONE_SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,9 +523,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46CCC2BA280EC343001058A3 /* Build configuration list for PBXNativeTarget "UBER-CLONE-SwiftUI" */;
 			buildPhases = (
+				BF5FB3904E24F0B60E2DD216 /* [CP] Check Pods Manifest.lock */,
 				46CCC2A8280EC342001058A3 /* Sources */,
 				46CCC2A9280EC342001058A3 /* Frameworks */,
 				46CCC2AA280EC342001058A3 /* Resources */,
+				542D8E3FAC438A4358A1EAAB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -509,9 +535,6 @@
 			);
 			name = "UBER-CLONE-SwiftUI";
 			packageProductDependencies = (
-				4664AEEA284CAAB600BB8459 /* FirebaseAuth */,
-				4664AEEC284CAAB600BB8459 /* FirebaseDatabase */,
-				4664AEEE284CAAB600BB8459 /* FirebaseFirestore */,
 			);
 			productName = "UBER-CLONE-SwiftUI";
 			productReference = 46CCC2AC280EC342001058A3 /* UBER-CLONE-SwiftUI.app */;
@@ -542,7 +565,6 @@
 			);
 			mainGroup = 46CCC2A3280EC342001058A3;
 			packageReferences = (
-				4664AEE9284CAAB600BB8459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 46CCC2AD280EC342001058A3 /* Products */;
 			projectDirPath = "";
@@ -565,6 +587,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		542D8E3FAC438A4358A1EAAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UBER-CLONE-SwiftUI/Pods-UBER-CLONE-SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UBER-CLONE-SwiftUI/Pods-UBER-CLONE-SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UBER-CLONE-SwiftUI/Pods-UBER-CLONE-SwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF5FB3904E24F0B60E2DD216 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UBER-CLONE-SwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46CCC2A8280EC342001058A3 /* Sources */ = {
@@ -602,7 +666,9 @@
 				464380C4284D3B7B0067AA4C /* UIActivityIndicatorView.swift in Sources */,
 				4660858828187B1800D32009 /* ImageConstants.swift in Sources */,
 				464380C6284DFE7C0067AA4C /* RoutingOverlayView.swift in Sources */,
+				46DC1504284F4E7600C87DE8 /* LoginService.swift in Sources */,
 				4694B3A9284A8BDD009517F4 /* HomeServiceProtocol.swift in Sources */,
+				46DC1502284F4E1800C87DE8 /* LoginServiceProtocol.swift in Sources */,
 				464380C2284D3AEA0067AA4C /* LoadingView.swift in Sources */,
 				464380BE284D14350067AA4C /* DB+References.swift in Sources */,
 			);
@@ -727,6 +793,7 @@
 		};
 		46CCC2BB280EC343001058A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 034D6BF980D9B14E3A5ABBB0 /* Pods-UBER-CLONE-SwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -758,6 +825,7 @@
 		};
 		46CCC2BC280EC343001058A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB5C77B6A3D45189C4BA5A5 /* Pods-UBER-CLONE-SwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -809,35 +877,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4664AEE9284CAAB600BB8459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4664AEEA284CAAB600BB8459 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4664AEE9284CAAB600BB8459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		4664AEEC284CAAB600BB8459 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4664AEE9284CAAB600BB8459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		4664AEEE284CAAB600BB8459 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4664AEE9284CAAB600BB8459 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46CCC2A4280EC342001058A3 /* Project object */;
 }

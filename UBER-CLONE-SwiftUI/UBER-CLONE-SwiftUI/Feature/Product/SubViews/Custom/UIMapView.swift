@@ -94,7 +94,6 @@ extension UIMapView {
    // update annotations on route select
    private func updateSelectedAnnotations(uiView: MKMapView) {
       if let selectedAnnotation = selectedAnnotation {
-         //  print("DEBUG : BURAYA GİRDİ")
          uiView.removeAnnotations(uiView.selectedAnnotations)
          uiView.addAnnotation(selectedAnnotation)
          uiView.selectAnnotation(selectedAnnotation, animated: true)

@@ -21,7 +21,6 @@ struct ActivityIndicatorView : UIViewRepresentable {
       av.hidesWhenStopped = true
       av.color = color
       av.style = style
-
       return av
    }
 

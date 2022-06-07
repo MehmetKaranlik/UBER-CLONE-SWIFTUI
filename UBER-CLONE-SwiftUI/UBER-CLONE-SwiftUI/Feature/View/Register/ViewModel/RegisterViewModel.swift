@@ -6,11 +6,16 @@
 //
 
 import Foundation
+import CoreLocation
 
 class RegisterViewModel: ObservableObject {
 
    // MARK:  properties
    let service : RegisterService = RegisterService()
+   let locationManager : LocationManager = .shared
+   var location : CLLocation {
+      return locationManager.location
+   }
    // published properties
    @Published var isDriver: Int = 0
 
@@ -25,10 +30,11 @@ class RegisterViewModel: ObservableObject {
    // MARK:  functions
 
    func registerUser(email: String, password : String) {
+
       isLoading.toggle()
       print("Email" +  email)
       print("Passowrd : " + password)
-      service.register(email: email, password: password, userType: isDriver) {[weak self] result, error in
+      service.register(email: email, password: password, userType: isDriver,location: location) {[weak self] result, error in
          self?.isLoading.toggle()
 
          if let error = error  { print("Error while registering : \(error)");  return }

@@ -6,10 +6,22 @@
 //
 
 import Foundation
+import GeoFire
 import MapKit
+
 protocol HomeServiceProtocol {
-   typealias Completion =  ([MKPlacemark]) -> ()
+   // properties
+   var geofire: GeoFire { get }
+   var localSearchRequest: MKLocalSearch.Request { get }
+   var directionRequest: MKDirections.Request { get }
+
+   // aliases
+   typealias Completion = ([MKPlacemark]) -> ()
    typealias PolylineCompletion = (MKPolyline) -> ()
-   func  fetchSearchPlaces(languageQuery : String,region : MKCoordinateRegion, completion : @escaping Completion)
-   func  generatePolylineByIndex(_ toDestination : MKMapItem, completion : @escaping PolylineCompletion)
+   typealias DriverFetchingCompletion = ([MKAnnotation]) -> ()
+
+   // functions
+   func fetchSearchPlaces(languageQuery: String, region: MKCoordinateRegion, completion: @escaping Completion)
+   func generatePolylineByIndex(_ toDestination: MKMapItem, completion: @escaping PolylineCompletion)
+   func fetchDrivers(location: CLLocation, onResult: @escaping DriverFetchingCompletion)
 }
