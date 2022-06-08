@@ -14,6 +14,8 @@ struct HomeView: View {
    @State var searchBarOpacity: Double = 1
    @State var isOverlayAnimating: Bool = false
 
+
+
    var body: some View {
       ZStack {
          // map
@@ -43,10 +45,11 @@ struct HomeView: View {
          .onChange(of: isOverlayAnimating, perform: changeOpacity)
 
          // cancelatipn overlay
-         if viewModel.selectedAnnotation != nil && !viewModel.searchResults.isEmpty && !isOverlayAnimating {
+         if displayCondition() {
             if let index = viewModel.selectedIndex {
                let destionation = viewModel.searchResults[index]
                buildCancelationOverlay(destionation)
+                  .transition(AnyTransition.move(edge: .bottom).animation(.spring()))
             }
          }
       }
@@ -85,6 +88,10 @@ extension HomeView {
 
    private func onCancelHandler() {
       viewModel.cancelRouting()
+   }
+
+   fileprivate func displayCondition() -> Bool {
+      return viewModel.selectedAnnotation != nil && !viewModel.searchResults.isEmpty && !isOverlayAnimating
    }
 }
 

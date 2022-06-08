@@ -18,6 +18,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
    @Published var location = CLLocation() {
       didSet {
          updateLocation()
+         
       }
    }
 

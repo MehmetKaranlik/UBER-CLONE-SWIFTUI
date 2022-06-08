@@ -18,10 +18,12 @@ protocol HomeServiceProtocol {
    // aliases
    typealias Completion = ([MKPlacemark]) -> ()
    typealias PolylineCompletion = (MKPolyline) -> ()
-   typealias DriverFetchingCompletion = ([MKAnnotation]) -> ()
+   typealias DriverFetchingCompletion = (DriverAnnotation) -> ()
+   //typealias UserFetchingCompletion = (MapEntity) -> ()
 
    // functions
    func fetchSearchPlaces(languageQuery: String, region: MKCoordinateRegion, completion: @escaping Completion)
    func generatePolylineByIndex(_ toDestination: MKMapItem, completion: @escaping PolylineCompletion)
    func fetchDrivers(location: CLLocation, onResult: @escaping DriverFetchingCompletion)
+  // func fetchUserByUID(uid : String,onResult : @escaping UserFetchingCompletion)
 }

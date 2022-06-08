@@ -39,7 +39,6 @@ struct LoginView: View {
                }
 
             }
-            .disabled(viewModel.isLoading)
 
             if viewModel.isLoading {
                LoadingView(isAnimating: viewModel.isLoading)

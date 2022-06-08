@@ -10,12 +10,15 @@ import GeoFire
 import MapKit
 
 struct HomeService: HomeServiceProtocol {
-   // MARK:  properties
-   var geofire: GeoFire = GeoFire(firebaseRef: DRIVER_LOCATIONS_REF)
 
-   var localSearchRequest: MKLocalSearch.Request = MKLocalSearch.Request()
 
-   var directionRequest: MKDirections.Request = MKDirections.Request()
+   // MARK: properties
+
+   var geofire: GeoFire = .init(firebaseRef: DRIVER_LOCATIONS_REF)
+
+   var localSearchRequest: MKLocalSearch.Request = .init()
+
+   var directionRequest: MKDirections.Request = .init()
 
    func fetchSearchPlaces(languageQuery: String, region: MKCoordinateRegion, completion: @escaping Completion) {
       var results = [MKPlacemark]()
@@ -55,6 +58,18 @@ struct HomeService: HomeServiceProtocol {
    }
 
    func fetchDrivers(location: CLLocation, onResult: @escaping DriverFetchingCompletion) {
-      
+      DRIVER_LOCATIONS_REF.observe(.value) { uids in
+         print("DEBUG : \(location)")
+         geofire.query(at: location, withRadius: 60).observe(.keyEntered, with: { uid, location in
+            print("DEBUG : burasi calisti")
+            let annotation = DriverAnnotation(uid: uid, coordinate: location.coordinate)
+            print(annotation)
+            onResult(annotation)
+         }
+         )
+
+      }
    }
+
+
 }

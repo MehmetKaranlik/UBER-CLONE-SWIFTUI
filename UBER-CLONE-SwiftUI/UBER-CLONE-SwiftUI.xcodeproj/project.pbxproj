@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4618B743284FD45500234940 /* DriverAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4618B742284FD45500234940 /* DriverAnnotations.swift */; };
 		464380B9284D0AAA0067AA4C /* RegisterServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */; };
 		464380BB284D0F2F0067AA4C /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380BA284D0F2F0067AA4C /* RegisterService.swift */; };
 		464380BE284D14350067AA4C /* DB+References.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380BD284D14350067AA4C /* DB+References.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		034D6BF980D9B14E3A5ABBB0 /* Pods-UBER-CLONE-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER-CLONE-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-UBER-CLONE-SwiftUI/Pods-UBER-CLONE-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		2C8C0F9A51F1F4A3775F34E8 /* Pods_UBER_CLONE_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBER_CLONE_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4618B742284FD45500234940 /* DriverAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotations.swift; sourceTree = "<group>"; };
 		464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceProtocol.swift; sourceTree = "<group>"; };
 		464380BA284D0F2F0067AA4C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		464380BD284D14350067AA4C /* DB+References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DB+References.swift"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			children = (
 				4694B3AD284B67E9009517F4 /* UIMapView.swift */,
 				464380C3284D3B7B0067AA4C /* UIActivityIndicatorView.swift */,
+				4618B742284FD45500234940 /* DriverAnnotations.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				4664AEF3284CB6BD00BB8459 /* JsonObjectWrapper.swift in Sources */,
 				4660858E281887ED00D32009 /* CapsuleButton.swift in Sources */,
 				4660858528187AC000D32009 /* ColorConstants.swift in Sources */,
+				4618B743284FD45500234940 /* DriverAnnotations.swift in Sources */,
 				4660858028184FC100D32009 /* NavigationUtil.swift in Sources */,
 				46500B5E2822E5F70000AC60 /* UISegmentedControl.swift in Sources */,
 				46500B5B2822E44C0000AC60 /* RegisterViewModel.swift in Sources */,

@@ -8,17 +8,19 @@
 import Foundation
 import MapKit
 import SwiftUI
+import Combine
 
 struct UIMapView: UIViewRepresentable {
    // MARK:  properties
    @Binding var region: MKCoordinateRegion
    @Binding var polyLine: MKPolyline?
-   @Binding var annotations: [MKAnnotation]?
+   @Binding var annotations: [DriverAnnotation]
    @Binding var selectedAnnotation: MKAnnotation?
 
    func makeUIView(context: Context) -> MKMapView {
       let mapview = MKMapView()
       configureUIView(mapview, context)
+
       return mapview
    }
 
@@ -27,7 +29,7 @@ struct UIMapView: UIViewRepresentable {
       // update polyline
       updatePolyLine(uiView)
       // add driver annotations
-      annotations != nil ? uiView.addAnnotations(annotations!) : nil
+      uiView.addAnnotations(annotations)
       // update destination annotation
       updateSelectedAnnotations(uiView: uiView)
    }
@@ -63,6 +65,18 @@ struct UIMapView: UIViewRepresentable {
          lineRenderer.lineWidth = 3
          return lineRenderer
       }
+
+      func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+         if let annotation = annotation as? DriverAnnotation {
+            let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "DriverAnnotationID")
+            view.isUserInteractionEnabled = false
+            view.image = UIImage(named: "chevron-sign-to-right")
+            return view
+         }
+         return nil
+      }
+
+
    }
 }
 
@@ -89,6 +103,7 @@ extension UIMapView {
       mapview.userTrackingMode = .follow
       mapview.centerCoordinate = region.center
       mapview.delegate = context.coordinator
+
    }
 
    // update annotations on route select

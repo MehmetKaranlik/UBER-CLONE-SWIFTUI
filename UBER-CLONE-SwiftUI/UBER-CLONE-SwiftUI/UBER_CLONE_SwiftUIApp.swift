@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 @main
 struct UBER_CLONE_SwiftUIApp: App {
    init() {
@@ -17,4 +18,15 @@ struct UBER_CLONE_SwiftUIApp: App {
            LoginView()
         }
     }
+}
+
+extension UBER_CLONE_SwiftUIApp {
+   @ViewBuilder
+   func initiliazeRootViewByUID() -> some View {
+      if let uid = Auth.auth().currentUser?.uid {
+         HomeView()
+      }else {
+         LoginView()
+      }
+   }
 }
