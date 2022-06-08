@@ -10,6 +10,7 @@
 		2C5A7F7348877CB2690CA85E /* Pods_UBER_CLONE_SwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4FC81F9267EC668394830C /* Pods_UBER_CLONE_SwiftUITests.framework */; };
 		2F865EB39B85841FAF10F9E1 /* Pods_UBER_CLONE_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E618CDA907CB12297BAFF35 /* Pods_UBER_CLONE_SwiftUI.framework */; };
 		4618B743284FD45500234940 /* DriverAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4618B742284FD45500234940 /* DriverAnnotations.swift */; };
+		46406C112850E4F800A700CD /* LoginViewModelTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46406C102850E4F800A700CD /* LoginViewModelTesting.swift */; };
 		464380B9284D0AAA0067AA4C /* RegisterServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */; };
 		464380BB284D0F2F0067AA4C /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380BA284D0F2F0067AA4C /* RegisterService.swift */; };
 		464380BE284D14350067AA4C /* DB+References.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464380BD284D14350067AA4C /* DB+References.swift */; };
@@ -67,6 +68,7 @@
 		086F6E8A0B498D370A8EE6C1 /* Pods-UBER-CLONE-SwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER-CLONE-SwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-UBER-CLONE-SwiftUITests/Pods-UBER-CLONE-SwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1488411379EB38185386DC7A /* Pods-UBER-CLONE-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER-CLONE-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-UBER-CLONE-SwiftUI/Pods-UBER-CLONE-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		4618B742284FD45500234940 /* DriverAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotations.swift; sourceTree = "<group>"; };
+		46406C102850E4F800A700CD /* LoginViewModelTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTesting.swift; sourceTree = "<group>"; };
 		464380B8284D0AAA0067AA4C /* RegisterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceProtocol.swift; sourceTree = "<group>"; };
 		464380BA284D0F2F0067AA4C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		464380BD284D14350067AA4C /* DB+References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DB+References.swift"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		46497B922850E0B4006525D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				46406C102850E4F800A700CD /* LoginViewModelTesting.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46BB56612850DF3F0045307B /* UBER_CLONE_SwiftUITests.swift in Sources */,
+				46406C112850E4F800A700CD /* LoginViewModelTesting.swift in Sources */,
 				46497B942850E0C9006525D4 /* LoginServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
